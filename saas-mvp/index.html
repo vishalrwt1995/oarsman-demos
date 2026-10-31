@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SaaS MVP demo: working multi-user app in your browser | Oarsman AI</title>
+<meta name="description" content="A working SaaS MVP you can click through: sign-in, projects CRUD, admin/member/viewer roles, billing in test mode, saved in your browser. Demo build by Oarsman AI, fictional data, with tests and Lighthouse scores.">
+<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="stylesheet" href="app.css">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../"><span class="mark">O</span>Oarsman AI</a>
+  <nav class="links"><a href="../">All demos</a><a class="on" href="./">SaaS MVP</a><a href="case-study.html">Case study</a></nav>
+</div></header>
+<main class="wrap">
+  <div class="hero">
+    <p><span class="demo-badge">Demo build, no client</span></p>
+    <h1>SaaS MVP: <span class="grad">a real app, not a mockup</span></h1>
+    <p class="lead"><strong>Plotboard</strong> is a made-up project tracker for small agencies. Sign in as one of three people, and you'll see the app change with your role. You can create, edit and delete projects and clients, invite teammates, and switch plans in test mode. Everything is saved in your browser, so it's still there after a reload.</p>
+    <p><a class="btn primary" href="#app">Open the app</a><a class="btn" href="case-study.html">Read the case study</a></p>
+  </div>
+  <section>
+    <div class="honest">
+      <strong>What's real and what isn't</strong>
+      <ul class="clean">
+        <li><span class="tag real">Real</span>The app logic: validation, role permissions checked on every write (not just hidden buttons), plan limits, search, sort, the activity log and saving data. You can run the 28 unit tests yourself on the Self-tests page.</li>
+        <li><span class="tag sim">Simulated</span>There's no server. Sign-in is a mock (password <code>demo1234</code>, kept in your browser), and data lives in your browser's localStorage. Billing is test mode, so no payment form exists and no money moves. In a client build, these become a real backend (for example Supabase or Postgres with an API), real auth and Stripe.</li>
+        <li><span class="tag sample">Sample</span>Plotboard, the agency, its clients and its people are fictional. Emails use <code>.example</code> domains.</li>
+        <li><span class="tag sim">AI use</span>AI tools helped write the code and the copy. A person at Oarsman AI reviewed it, and it's covered by the tests.</li>
+      </ul>
+    </div>
+  </section>
+  <section id="app">
+    <div id="root" aria-live="polite"></div>
+  </section>
+</main>
+<dialog id="dlg"><form method="dialog" id="dlg-form"></form></dialog>
+<footer><div class="wrap">Oarsman AI. Demo build, no client. AI tools helped write this page and its code. Runs entirely in your browser: no tracking, no cookies, no API keys, nothing sent anywhere. <a href="../">All demos</a> · <a href="case-study.html">Case study</a></div></footer>
+<script src="core.js"></script>
+<script src="tests.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

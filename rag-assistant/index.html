@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RAG assistant demo: handbook Q&amp;A with citations and an eval panel | Oarsman AI</title>
+<meta name="description" content="Ask a fictional company handbook questions. Answers come with clickable citations, the assistant says 'I don't know' when the handbook doesn't cover it, and an eval panel shows the pass rate. Runs fully in your browser.">
+<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="stylesheet" href="rag.css">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../"><span class="mark">O</span>Oarsman AI</a>
+  <nav class="links"><a href="../">All demos</a><a class="on" href="./">RAG assistant</a><a href="case-study.html">Case study</a></nav>
+</div></header>
+<main class="wrap">
+  <div class="hero">
+    <p><span class="demo-badge">Demo build, no client</span></p>
+    <h1>Handbook assistant: <span class="grad">cites its sources, admits what it doesn't know</span></h1>
+    <p class="lead">Ask anything about the employee handbook of <strong>Brightmoor Labs</strong>, a made-up company. Every answer links to the passage it came from. If the handbook doesn't cover your question, the assistant says so instead of guessing. The eval panel below shows how often it gets things right.</p>
+  </div>
+  <section>
+    <div class="honest">
+      <strong>How the answers are produced (straight talk)</strong>
+      <ul class="clean">
+        <li><span class="tag real">Real</span>Retrieval: a BM25 keyword search over the handbook's 53 paragraphs, running in your browser. It has a small hand-written synonym list (for example "PTO" finds "vacation").</li>
+        <li><span class="tag real">Real</span>Answers are <strong>extractive</strong>. The assistant picks the best one or two sentences and copies them word for word, so it can't make up a policy. No language model writes anything, and no API key or server is involved.</li>
+        <li><span class="tag real">Real</span>The "I don't know" gate refuses when the best passage scores too low, or when it covers less than half of the question's key words. Open "How this was found" under any answer to see the scores.</li>
+        <li><span class="tag sample">Sample</span>Brightmoor Labs and its handbook are fictional. The eval questions were written alongside the handbook, so they aren't an independent benchmark.</li>
+        <li><span class="tag sim">AI use</span>AI tools helped write the code, the fictional handbook and the copy. A client build would usually add embeddings and an LLM (OpenAI, Claude or a local model) to write fluent answers, while keeping the same citations and refusal checks.</li>
+      </ul>
+    </div>
+  </section>
+  <section class="ragwrap">
+    <div class="card chatbox">
+      <h2 style="margin-bottom:4px">Ask the handbook</h2>
+      <div class="chat" id="chat" aria-live="polite"></div>
+      <div class="sugs" id="sugs"></div>
+      <form class="free" id="askform"><input id="q" placeholder="e.g. How many sick days do I get?" aria-label="Your question" autocomplete="off"><button class="btn primary" style="margin:0">Ask</button></form>
+    </div>
+    <div class="card hb" id="hb" aria-label="Handbook text"><h2 style="margin-bottom:0">Brightmoor Labs handbook</h2><p class="muted small" id="hbmeta" style="padding:0"></p><div id="hbtext"></div></div>
+  </section>
+  <section>
+    <div class="card">
+      <h2>Eval panel</h2>
+      <p class="muted small">Each in-scope question passes only if the first citation is the right section <em>and</em> the answer contains the expected fact. Each out-of-scope question passes only if the assistant says it doesn't know. The questions run live in your browser when you press the button, and nothing is pre-recorded.</p>
+      <div class="evalsum"><button class="btn primary" id="runeval">Run all evals</button><span id="evalscore" class="stat"></span></div>
+      <div class="table-wrap"><table id="evaltable"><thead><tr><th>#</th><th>Question</th><th>Expected</th><th>Got</th><th>Result</th></tr></thead><tbody></tbody></table></div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap">Oarsman AI. Demo build, no client. AI tools helped write this page, the code and the fictional handbook. Everything runs in your browser: no tracking, no cookies, no API keys, nothing sent anywhere. <a href="../">All demos</a> · <a href="case-study.html">Case study</a></div></footer>
+<script src="handbook.js"></script>
+<script src="rag.js"></script>
+<script src="evalset.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

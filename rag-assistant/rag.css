@@ -1,0 +1,17 @@
+.demo-badge{display:inline-flex;font-size:12px;color:var(--amber);border:1px solid rgba(251,191,36,.35);background:rgba(251,191,36,.08);padding:3px 10px;border-radius:999px;font-weight:600}
+.ragwrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:16px}
+.chatbox{display:flex;flex-direction:column;height:620px}
+.chatbox .chat{flex:1;max-height:none}
+.msg.bot{align-self:flex-start;background:var(--panel2);border:1px solid var(--line);border-bottom-left-radius:4px}
+.msg.user{align-self:flex-end;background:#1d2a4d;border-bottom-right-radius:4px}
+.msg.idk{border-color:rgba(251,191,36,.45)}
+sup.cite a{display:inline-block;min-width:18px;text-align:center;font-size:11px;font-weight:700;background:rgba(52,245,197,.15);color:var(--teal);border-radius:6px;padding:0 4px;text-decoration:none;margin-left:2px}
+.srcs{margin-top:6px;font-size:12px;color:var(--muted)}.srcs a{color:var(--teal)}
+details.how{margin-top:6px;font-size:12px;color:var(--muted)}details.how summary{cursor:pointer}details.how table{font-size:12px}
+.sugs{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 0}.sugs button{font-size:12px;padding:5px 10px;margin:0}
+.hb{height:620px;overflow:auto}
+.hb h4{margin:14px 0 6px;font-size:14px;color:var(--text)}.hb p{margin:0 0 8px;font-size:13px;color:var(--muted);padding:4px 6px;border-radius:6px;transition:background .3s}
+.hb p.hit{background:rgba(52,245,197,.14);color:var(--text);outline:1px solid rgba(52,245,197,.5)}
+.evalsum{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:8px 0}
+.pass{color:var(--teal);font-weight:700}.fail{color:var(--red);font-weight:700}
+@media (max-width:860px){.ragwrap{grid-template-columns:minmax(0,1fr)}.chatbox{height:560px}.hb{height:380px}}

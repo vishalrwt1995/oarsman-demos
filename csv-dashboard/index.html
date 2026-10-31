@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Drop your CSV, get a KPI dashboard (data stays in your browser) | Oarsman AI</title>
+<meta name="description" content="Drop a CSV and get KPIs, charts, targets with red/amber/green flags and an Excel export. Your file never leaves your browser. Includes a fictional sample store dataset. Demo build by Oarsman AI.">
+<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="stylesheet" href="dash.css">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../"><span class="mark">O</span>Oarsman AI</a>
+  <nav class="links"><a href="../">All demos</a><a class="on" href="./">CSV dashboard</a><a href="case-study.html">Case study</a></nav>
+</div></header>
+<main class="wrap">
+  <div class="hero">
+    <p><span class="demo-badge">Demo build, no client</span></p>
+    <h1>Drop your CSV, <span class="grad">get a KPI dashboard</span></h1>
+    <p class="lead">Drop in a sales, orders or finance export and get headline numbers, monthly trends, a breakdown by category and channel, and targets with red, amber and green flags. You can download it all as an Excel file. Your file is read in this tab and never uploaded.</p>
+  </div>
+  <section>
+    <div class="honest">
+      <strong>What's real and what isn't</strong>
+      <ul class="clean">
+        <li><span class="tag real">Real</span>The CSV parser, column detection, sums, margins, month-on-month change, target flags, charts and the Excel export all run in your browser. Check the network tab: nothing is sent after the page loads.</li>
+        <li><span class="tag sample">Sample</span>The sample file is <strong>fictional</strong> store data (1,551 orders, Nov 2025 to Oct 2026) that we generated for this demo. It isn't any business's real numbers.</li>
+        <li><span class="tag sim">AI use</span>AI tools helped write the code and copy. A person at Oarsman AI checked it, and it's covered by unit tests and browser tests. Chart.js (MIT) draws the charts, and SheetJS (Apache 2.0) writes the Excel file.</li>
+      </ul>
+    </div>
+  </section>
+  <section>
+    <div class="drop" id="drop">
+      <h2>Drop a CSV file here</h2>
+      <p class="muted">or <label class="btn" for="file" style="margin:0 4px">choose a file</label><input type="file" id="file" accept=".csv,.tsv,.txt,text/csv" class="hidden"> or <button class="btn primary" id="sample" type="button" style="margin:0 4px">load the sample data</button></p>
+      <p class="muted small">Needs a date column and a number column (for example revenue). Commas, semicolons and tabs all work, and so do US or day-first dates. <a href="sample-orders.csv" download>Download the sample CSV</a></p>
+      <p class="status" id="status" role="status"></p>
+    </div>
+  </section>
+  <div id="dash" class="hidden">
+    <section class="card">
+      <h2>Columns and filters</h2>
+      <div class="ctl" id="mapping"></div>
+      <div class="ctl" style="margin-top:10px" id="filters"></div>
+      <div class="ctl" style="margin-top:10px"><div><label for="t-value">Monthly target (value)</label><input id="t-value" type="number" min="0" step="100"></div><div><label for="t-margin">Target margin %</label><input id="t-margin" type="number" min="0" max="100" step="1"></div><div><label>&nbsp;</label><button class="btn primary" id="xlsx" type="button" style="margin:0">Export to Excel</button></div><div><label>&nbsp;</label><button class="btn" id="csvout" type="button" style="margin:0">Monthly CSV</button></div></div>
+    </section>
+    <section><div class="kpis" id="kpis"></div></section>
+    <section class="charts">
+      <div class="card"><h3>Monthly trend vs target</h3><div class="chartbox"><canvas id="c-trend" aria-label="Monthly trend chart" role="img"></canvas></div></div>
+      <div class="card"><h3 id="c-cat-title">By category</h3><div class="chartbox"><canvas id="c-cat" aria-label="Category chart" role="img"></canvas></div></div>
+    </section>
+    <section class="charts">
+      <div class="card"><h3>Monthly summary</h3><div class="table-wrap"><table id="mtable"><thead></thead><tbody></tbody></table></div></div>
+      <div class="card"><h3 id="c-seg-title">By segment</h3><div class="chartbox"><canvas id="c-seg" aria-label="Segment chart" role="img"></canvas></div></div>
+    </section>
+    <section class="card"><h3>Self-check</h3><p class="muted small">The parser and maths unit tests run here in your browser. The sample-file test runs in Node only.</p><button class="btn" id="selftest" type="button">Run unit tests</button><span id="selfscore" class="stat" style="font-size:18px;margin-left:8px"></span></section>
+  </div>
+</main>
+<footer><div class="wrap">Oarsman AI. Demo build, no client. AI tools helped write this page and its code. Your file stays in your browser: no upload, no tracking, no cookies, no API keys. Chart.js (MIT) and SheetJS Community Edition (Apache 2.0) licences are in <code>vendor/</code>. <a href="../">All demos</a> · <a href="case-study.html">Case study</a></div></footer>
+<script src="vendor/chart.umd.min.js"></script>
+<script src="dash-core.js"></script>
+<script src="tests.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

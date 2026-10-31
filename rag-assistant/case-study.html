@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Case study: RAG handbook assistant with citations and evals | Oarsman AI</title>
+<meta name="description" content="One-page case study of an in-browser RAG assistant over a fictional handbook: citations, I don't know on uncovered questions, and a visible eval pass rate. Demo build, no client.">
+<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="stylesheet" href="case.css">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../"><span class="mark">O</span>Oarsman AI</a>
+  <nav class="links"><a href="../">All demos</a><a href="./">RAG assistant</a><a class="on" href="case-study.html">Case study</a></nav>
+</div></header>
+<main class="wrap cs">
+  <div class="hero" style="padding-bottom:6px">
+    <p><span class="demo-badge">Demo build, no client</span></p>
+    <h1>Handbook assistant: RAG with citations, "I don't know" and a live eval panel</h1>
+    <div class="meta"><span>Type: AI chatbot / RAG assistant</span><span>Built: Oct 2026</span><span>Status: public demo, fictional handbook</span></div>
+    <p><a class="btn primary" href="./">Open the live demo</a></p>
+  </div>
+  <section>
+    <h2>Problem</h2>
+    <p>Companies want staff to get answers from their own documents, but they worry about two failures. One is the bot confidently making up a policy. The other is that nobody can tell how often it's right. Most chatbot demos show a nice conversation and skip both. This demo puts both problems up front.</p>
+  </section>
+  <section>
+    <h2>Build</h2>
+    <ul class="clean">
+      <li><b>Knowledge base:</b> a fictional 22-section employee handbook for "Brightmoor Labs", split into 53 paragraph-sized chunks.</li>
+      <li><b>Retrieval:</b> BM25 ranking with stemming, stop-words and a small hand-written synonym list for the domain (for example PTO to vacation, 2FA to MFA). It runs entirely in the browser.</li>
+      <li><b>Answers:</b> extractive. The assistant picks the best one or two sentences from the top passages of the same section and quotes them word for word, with numbered citations that scroll to and highlight the source paragraph.</li>
+      <li><b>"I don't know" gate:</b> it refuses when the top BM25 score is below 3.0, or when the best section covers less than half of the question's key words. The reason and the scores are shown under every answer.</li>
+      <li><b>Eval panel:</b> {{EVAL_TOTAL}} questions ({{EVAL_IN}} answerable, {{EVAL_OOS}} not covered by the handbook). An answerable question passes only when the first citation is the right section and the answer contains the expected fact. An uncovered question passes only when the assistant says it doesn't know.</li>
+    </ul>
+    <img class="shot" src="shot.jpg" alt="Handbook assistant answering a vacation question with a citation, next to the highlighted handbook paragraph" width="1280" height="786" loading="lazy">
+  </section>
+  <section>
+    <h2>Result (measured on {{DATE}})</h2>
+    <div class="nums">
+      <div><b>{{EVAL}}</b><span>eval questions pass (live in the browser)</span></div>
+      <div><b>{{OOS}}</b><span>uncovered questions correctly refused</span></div>
+      <div><b>{{E2E}}</b><span>headless-Chrome checks pass, desktop and mobile</span></div>
+      <div><b>{{LH_M}}</b><span>Lighthouse mobile: Perf / A11y / Best pr. / SEO</span></div>
+    </div>
+    <p class="muted small">The one failure is left visible on purpose. "I clicked a phishing link, who do I tell?" gets refused, because "clicked", "link" and "tell" don't appear in the handbook, so keyword retrieval can't connect them to the security section. It errs on the side of "I don't know" rather than guessing, which is the behaviour we wanted, but it's still a miss. Embeddings or an LLM query rewrite would fix this kind of paraphrase in a client build. The eval questions were written alongside the handbook, so treat the score as a regression check, not an independent benchmark. Lighthouse desktop: {{LH_D}}.</p>
+  </section>
+  <section>
+    <h2>Stack</h2>
+    <p>Plain JavaScript with no dependencies: a BM25 retriever and answer extractor (<code>rag.js</code>, about 10 KB), a JSON knowledge base and an eval set. The same engine runs in Node for scripted evals. Hosted on GitHub Pages. Tested with Puppeteer and Lighthouse.</p>
+    <p class="muted small">A client build would typically use embeddings in a vector store (pgvector, Qdrant or similar) with hybrid BM25 plus vector search, an LLM (OpenAI, Claude or a local model) told to answer only from the retrieved passages, and the same citation, refusal and eval checks running in CI.</p>
+  </section>
+  <section>
+    <h2>What's honest to say</h2>
+    <div class="honest">This is a demo build with no client. Brightmoor Labs and its handbook are fictional. No language model generates the answers: they're sentences copied from the handbook, chosen by keyword search, and the page says so. AI tools helped write the code, the handbook text and the copy.</div>
+  </section>
+</main>
+<footer><div class="wrap">Oarsman AI. Demo build, no client. AI tools helped write this page and the assistant. <a href="../">All demos</a> · <a href="./">Live demo</a></div></footer>
+</body>
+</html>

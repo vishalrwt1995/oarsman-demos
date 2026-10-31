@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Case study: SaaS MVP with roles, CRUD and test-mode billing | Oarsman AI</title>
+<meta name="description" content="One-page case study of the Plotboard SaaS MVP demo: the problem, how it was built, real test and Lighthouse numbers, the stack, and what is simulated. Demo build, no client.">
+<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="stylesheet" href="case.css">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../"><span class="mark">O</span>Oarsman AI</a>
+  <nav class="links"><a href="../">All demos</a><a href="./">SaaS MVP</a><a class="on" href="case-study.html">Case study</a></nav>
+</div></header>
+<main class="wrap cs">
+  <div class="hero" style="padding-bottom:6px">
+    <p><span class="demo-badge">Demo build, no client</span></p>
+    <h1>Plotboard: a working SaaS MVP with roles, CRUD and test-mode billing</h1>
+    <div class="meta"><span>Type: web app / SaaS MVP</span><span>Built: Oct 2026</span><span>Status: public demo, fictional data</span></div>
+    <p><a class="btn primary" href="./">Open the live demo</a></p>
+  </div>
+  <section>
+    <h2>Problem</h2>
+    <p>Founders who hire for an MVP usually get screenshots or a clickable mockup first, and only find out late whether the hard parts work: who's allowed to do what, what happens with bad input, and whether data survives a reload. We wanted a demo that shows those parts working, and that a client can poke at before any call.</p>
+  </section>
+  <section>
+    <h2>Build</h2>
+    <ul class="clean">
+      <li><b>Mock sign-in</b> with three people: an admin, a member and a viewer. The session is kept in the browser.</li>
+      <li><b>CRUD</b> for projects (create, edit, delete, search, filter, sort) and for clients, with validation messages for empty names, bad dates, negative budgets, duplicates, and clients that still have projects.</li>
+      <li><b>Roles enforced in the data layer.</b> Every write checks a permission table, the same way a server would, so hiding a button isn't the only protection. The Team page shows the full permission matrix.</li>
+      <li><b>Plans and limits.</b> Free allows 3 seats, so a 4th invite is refused until an admin switches to Pro on the Billing page. Billing is test mode: no card form and no payment provider.</li>
+      <li><b>Persistence</b> in localStorage, plus an activity log, JSON export and a reset button. A corrupt saved state falls back to the seed data.</li>
+      <li><b>Self-tests page</b> that runs the unit tests in the visitor's browser against a throwaway in-memory copy.</li>
+    </ul>
+    <img class="shot" src="shot.jpg" alt="Plotboard projects table signed in as the admin, with overdue projects highlighted" width="1280" height="663" loading="lazy">
+  </section>
+  <section>
+    <h2>Result (measured on {{DATE}})</h2>
+    <div class="nums">
+      <div><b>28/28</b><span>unit tests pass (Node and in-browser)</span></div>
+      <div><b>{{E2E}}</b><span>headless-Chrome checks pass, desktop and mobile</span></div>
+      <div><b>{{LH_M}}</b><span>Lighthouse mobile: Perf / A11y / Best pr. / SEO</span></div>
+      <div><b>{{LH_D}}</b><span>Lighthouse desktop, same order</span></div>
+    </div>
+    <p class="muted small">The end-to-end checks sign in as each role and create, edit, search, delete, hit the seat limit, upgrade in test mode, invite, reload to confirm saved data, and reset. They also check for console errors and horizontal overflow at 1280px and 390px. Lighthouse scores are for the first screen (sign-in) of the live GitHub Pages URL. This is a demo, so there are no users, revenue or client results to report.</p>
+  </section>
+  <section>
+    <h2>Stack</h2>
+    <p>Plain HTML, CSS and JavaScript, with no framework and no build step. A small core module (<code>core.js</code>, about 13 KB) holds the data model, validation and permissions, and it runs in both the browser and Node so the same tests cover both. Hosted on GitHub Pages. Tested with Node, Puppeteer (headless Chrome) and Lighthouse.</p>
+    <p class="muted small">For a client, the same structure moves to a real stack: React or Next.js on the front end, Supabase or Postgres with row-level security for data and roles, real auth (email, magic link or SSO), and Stripe Checkout with webhooks for billing.</p>
+  </section>
+  <section>
+    <h2>What's honest to say</h2>
+    <div class="honest">This is a demo build with no client. Plotboard, its agency, clients and people are fictional. There's no server: sign-in is a mock with a shared demo password, and data stays in your own browser. AI tools helped write the code and copy, and the tests above are how we checked it. The source is readable in your browser's developer tools.</div>
+  </section>
+</main>
+<footer><div class="wrap">Oarsman AI. Demo build, no client. AI tools helped write this page and the app. <a href="../">All demos</a> · <a href="./">Live demo</a></div></footer>
+</body>
+</html>
