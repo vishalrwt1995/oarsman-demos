@@ -10,7 +10,7 @@ sup.cite a{display:inline-block;min-width:18px;text-align:center;font-size:11px;
 details.how{margin-top:6px;font-size:12px;color:var(--muted)}details.how summary{cursor:pointer}details.how table{font-size:12px}
 .sugs{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 0}.sugs button{font-size:12px;padding:5px 10px;margin:0}
 .hb{height:620px;overflow:auto}
-.hb h4{margin:14px 0 6px;font-size:14px;color:var(--text)}.hb p{margin:0 0 8px;font-size:13px;color:var(--muted);padding:4px 6px;border-radius:6px;transition:background .3s}
+.hb h3{margin:14px 0 6px;font-size:14px;color:var(--text)}.hb p{margin:0 0 8px;font-size:13px;color:var(--muted);padding:4px 6px;border-radius:6px;transition:background .3s}
 .hb p.hit{background:rgba(52,245,197,.14);color:var(--text);outline:1px solid rgba(52,245,197,.5)}
 .evalsum{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:8px 0}
 .pass{color:var(--teal);font-weight:700}.fail{color:var(--red);font-weight:700}

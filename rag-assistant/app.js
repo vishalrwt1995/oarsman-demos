@@ -5,7 +5,7 @@
   var $ = function (s) { return document.querySelector(s); };
   function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
   $('#hbmeta').textContent = H.company + ' employee handbook ' + H.version + ', updated ' + H.updated + '. ' + H.sections.length + ' sections. Fictional.';
-  $('#hbtext').innerHTML = H.sections.map(function (s) { return '<h4 id="s-' + s.id + '">' + esc(s.title) + '</h4>' + s.paras.map(function (p, i) { return '<p id="p-' + s.id + '-' + i + '">' + esc(p) + '</p>'; }).join(''); }).join('');
+  $('#hbtext').innerHTML = H.sections.map(function (s) { return '<h3 class="hbh" id="s-' + s.id + '">' + esc(s.title) + '</h3>' + s.paras.map(function (p, i) { return '<p id="p-' + s.id + '-' + i + '">' + esc(p) + '</p>'; }).join(''); }).join('');
   function show(id) {
     var el = document.getElementById('p-' + id.replace('#', '-')); if (!el) return;
     document.querySelectorAll('.hb p.hit').forEach(function (p) { p.classList.remove('hit'); }); el.classList.add('hit');

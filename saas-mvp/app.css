@@ -30,3 +30,4 @@ dialog::backdrop{background:rgba(0,0,0,.6)}
 .act li{font-size:13px;color:var(--muted);margin:4px 0}
 @media (max-width:860px){.app{grid-template-columns:minmax(0,1fr)}.side{flex-direction:row;flex-wrap:wrap;border-right:0;border-bottom:1px solid var(--line)}.side .ws{width:100%;padding-bottom:4px}.side .me{width:100%;margin-top:6px}.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.plans{grid-template-columns:minmax(0,1fr)}.form2{grid-template-columns:minmax(0,1fr)}.main{padding:14px}}
 td .btn{padding:5px 10px;margin:0 4px 0 0;font-size:13px}
+#root{min-height:700px}
