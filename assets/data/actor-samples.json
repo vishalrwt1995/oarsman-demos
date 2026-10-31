@@ -1,0 +1,672 @@
+{
+ "meta": {
+  "runAt": "2026-10-31T13:41:31.099Z",
+  "atsSources": [
+   {
+    "input": "ashby:ramp",
+    "ats": "ashby",
+    "fetched": 171,
+    "matched": 3,
+    "pushed": 3
+   },
+   {
+    "input": "workday:adobe.wd5/external_experienced",
+    "ats": "workday",
+    "fetched": 281,
+    "matched": 3,
+    "pushed": 3
+   },
+   {
+    "input": "workable:huggingface",
+    "ats": "workable",
+    "fetched": 6,
+    "matched": 3,
+    "pushed": 3
+   },
+   {
+    "input": "recruitee:bunq",
+    "ats": "recruitee",
+    "fetched": 25,
+    "matched": 3,
+    "pushed": 3
+   },
+   {
+    "input": "greenhouse:gitlab",
+    "ats": "greenhouse",
+    "fetched": 238,
+    "matched": 3,
+    "pushed": 3
+   },
+   {
+    "input": "lever:palantir",
+    "ats": "lever",
+    "fetched": 100,
+    "matched": 3,
+    "pushed": 3
+   },
+   {
+    "input": "greenhouse:figma (from https://www.figma.com/careers/)",
+    "ats": "greenhouse",
+    "fetched": 140,
+    "matched": 3,
+    "pushed": 3
+   },
+   {
+    "input": "teamtailor:polestar",
+    "ats": "teamtailor",
+    "fetched": 13,
+    "matched": 3,
+    "pushed": 3
+   }
+  ],
+  "atsTotals": {
+   "totalFetched": 974,
+   "totalMatched": 24,
+   "totalPushed": 24
+  }
+ },
+ "ats": [
+  {
+   "ats": "ashby",
+   "company": "ramp",
+   "title": "Security Engineer, Cloud",
+   "department": "Engineering",
+   "location": "New York, NY (HQ)",
+   "country": "US",
+   "isRemote": true,
+   "postedAt": "2026-04-07T17:12:35.753Z",
+   "url": "https://jobs.ashbyhq.com/ramp/34413f8d-26bf-4bbc-8ade-eb309a0e2245",
+   "salary": "$211.4K - $290.6K"
+  },
+  {
+   "ats": "ashby",
+   "company": "ramp",
+   "title": "Mobile Engineer, Android",
+   "department": "Engineering",
+   "location": "New York, NY (HQ)",
+   "country": "US",
+   "isRemote": true,
+   "postedAt": "2025-07-31T21:58:34.674Z",
+   "url": "https://jobs.ashbyhq.com/ramp/f564dcf9-9390-4a3f-896f-8047a5086040",
+   "salary": "$189K - $330K"
+  },
+  {
+   "ats": "ashby",
+   "company": "ramp",
+   "title": "Software Engineer, Frontend",
+   "department": "Engineering",
+   "location": "New York, NY (HQ)",
+   "country": "US",
+   "isRemote": true,
+   "postedAt": "2023-03-09T17:44:00.817Z",
+   "url": "https://jobs.ashbyhq.com/ramp/4e64ab86-4e30-403b-b1b9-41dc052570ce",
+   "salary": "$143.2K - $284K"
+  },
+  {
+   "ats": "workday",
+   "company": "adobe",
+   "title": "Head of Government Relations & Public Policy, UKI and Middle East",
+   "department": null,
+   "location": "London",
+   "country": null,
+   "isRemote": false,
+   "postedAt": "2026-10-30T00:00:00.000Z",
+   "url": "https://adobe.wd5.myworkdayjobs.com/external_experienced/job/London/Head-of-Government-Relations---Public-Policy--UKI-and-Middle-East_R171788",
+   "salary": ""
+  },
+  {
+   "ats": "workday",
+   "company": "adobe",
+   "title": "Legal Counsel",
+   "department": null,
+   "location": null,
+   "country": null,
+   "isRemote": false,
+   "postedAt": "2026-10-30T00:00:00.000Z",
+   "url": "https://adobe.wd5.myworkdayjobs.com/external_experienced/job/Reading/Legal-Counsel_R171930",
+   "salary": ""
+  },
+  {
+   "ats": "workday",
+   "company": "adobe",
+   "title": "Value Creation Director - Adobe Private Capital",
+   "department": null,
+   "location": "London",
+   "country": null,
+   "isRemote": false,
+   "postedAt": "2026-10-30T00:00:00.000Z",
+   "url": "https://adobe.wd5.myworkdayjobs.com/external_experienced/job/London/Value-Creation-Director---Adobe-Private-Capital_R170201",
+   "salary": ""
+  },
+  {
+   "ats": "workable",
+   "company": "Hugging Face",
+   "title": "Open-Source Machine Learning Engineer - EMEA Remote",
+   "department": "Open Source",
+   "location": "Paris, Île-de-France, France",
+   "country": "FR",
+   "isRemote": true,
+   "postedAt": "2026-05-29T00:00:00.000Z",
+   "url": "https://apply.workable.com/j/81B46579FE",
+   "salary": ""
+  },
+  {
+   "ats": "workable",
+   "company": "Hugging Face",
+   "title": "Open-Source Machine Learning Engineer - US Remote",
+   "department": "Open Source",
+   "location": "New York, New York, United States",
+   "country": "US",
+   "isRemote": true,
+   "postedAt": "2026-05-29T00:00:00.000Z",
+   "url": "https://apply.workable.com/j/19A136F8E2",
+   "salary": ""
+  },
+  {
+   "ats": "workable",
+   "company": "Hugging Face",
+   "title": "Senior Machine Learning Engineer, Voice Agents - EMEA Remote",
+   "department": "Science",
+   "location": "Paris, Île-de-France, France",
+   "country": "FR",
+   "isRemote": true,
+   "postedAt": "2026-09-02T00:00:00.000Z",
+   "url": "https://apply.workable.com/j/9E2A4C02C7",
+   "salary": ""
+  },
+  {
+   "ats": "recruitee",
+   "company": "bunq",
+   "title": "Data Scientist Marketing",
+   "department": "Growth",
+   "location": "Amsterdam, Noord-Holland, Netherlands",
+   "country": "NL",
+   "isRemote": false,
+   "postedAt": "2026-10-28T13:21:58.000Z",
+   "url": "https://careers.bunq.com/o/data-scientist-marketing-3",
+   "salary": ""
+  },
+  {
+   "ats": "recruitee",
+   "company": "bunq",
+   "title": "Support Experience Lead",
+   "department": "Support & Operations",
+   "location": "Sofia, Sofia (stolitsa), Bulgaria",
+   "country": "BG",
+   "isRemote": false,
+   "postedAt": "2026-10-27T12:11:34.000Z",
+   "url": "https://careers.bunq.com/o/support-experience-lead",
+   "salary": ""
+  },
+  {
+   "ats": "recruitee",
+   "company": "bunq",
+   "title": "Collections Expert",
+   "department": "Support & Operations",
+   "location": "Amsterdam, Noord-Holland, Netherlands",
+   "country": "NL",
+   "isRemote": false,
+   "postedAt": "2026-10-26T13:13:39.000Z",
+   "url": "https://careers.bunq.com/o/collections-expert",
+   "salary": ""
+  },
+  {
+   "ats": "greenhouse",
+   "company": "GitLab",
+   "title": "AI Transformation Owner, CRO",
+   "department": "Enablement",
+   "location": "Remote, United States",
+   "country": "US",
+   "isRemote": true,
+   "postedAt": "2026-07-22T17:38:40.000Z",
+   "url": "https://job-boards.greenhouse.io/gitlab/jobs/8638232002",
+   "salary": "United States Salary Range"
+  },
+  {
+   "ats": "greenhouse",
+   "company": "GitLab",
+   "title": "AI Transformation Owner, Product & Design",
+   "department": "AI",
+   "location": "Remote, Canada; Remote, United Kingdom; Remote, United States",
+   "country": "US",
+   "isRemote": true,
+   "postedAt": "2026-08-19T20:52:27.000Z",
+   "url": "https://job-boards.greenhouse.io/gitlab/jobs/8716179002",
+   "salary": "United States Salary Range"
+  },
+  {
+   "ats": "greenhouse",
+   "company": "GitLab",
+   "title": "Associate Renewals Manager, SMB",
+   "department": "Renewals",
+   "location": "Remote, Canada; Remote, United States",
+   "country": "US",
+   "isRemote": true,
+   "postedAt": "2026-09-29T22:06:03.000Z",
+   "url": "https://job-boards.greenhouse.io/gitlab/jobs/8857185002",
+   "salary": "United States Salary Range"
+  },
+  {
+   "ats": "lever",
+   "company": "palantir",
+   "title": "Administrative Business Partner",
+   "department": null,
+   "location": "Singapore, Singapore",
+   "country": "SG",
+   "isRemote": false,
+   "postedAt": "2026-08-11T17:38:11.368Z",
+   "url": "https://jobs.lever.co/palantir/6ed76ce8-4156-4b60-b120-403538bd66cd",
+   "salary": ""
+  },
+  {
+   "ats": "lever",
+   "company": "palantir",
+   "title": "Administrative Business Partner - ShipOS",
+   "department": null,
+   "location": "Washington, D.C.",
+   "country": "US",
+   "isRemote": false,
+   "postedAt": "2026-06-18T08:34:20.468Z",
+   "url": "https://jobs.lever.co/palantir/a237973c-cb29-41fe-9c80-416e6f42e087",
+   "salary": "$60,000 - $97,000/year"
+  },
+  {
+   "ats": "lever",
+   "company": "palantir",
+   "title": "Administrative Business Partner - ShipOS",
+   "department": null,
+   "location": "New York, NY",
+   "country": "US",
+   "isRemote": false,
+   "postedAt": "2026-06-18T08:33:52.092Z",
+   "url": "https://jobs.lever.co/palantir/a5f93bb6-4f13-4451-80a4-f63090830269",
+   "salary": "$60,000 - $97,000/year"
+  },
+  {
+   "ats": "greenhouse",
+   "company": "Figma",
+   "title": "Account Executive, Enterprise",
+   "department": "Sales",
+   "location": "San Francisco, CA • New York, NY • United States",
+   "country": "US",
+   "isRemote": false,
+   "postedAt": "2025-01-28T23:57:29.000Z",
+   "url": "https://boards.greenhouse.io/figma/jobs/5426468004?gh_jid=5426468004",
+   "salary": "Annual Base Salary Range:"
+  },
+  {
+   "ats": "greenhouse",
+   "company": "Figma",
+   "title": "Account Executive, Enterprise (Bengaluru, India)",
+   "department": "Sales",
+   "location": "Bengaluru, India",
+   "country": "IN",
+   "isRemote": false,
+   "postedAt": "2025-07-22T03:53:16.000Z",
+   "url": "https://boards.greenhouse.io/figma/jobs/5579204004?gh_jid=5579204004",
+   "salary": ""
+  },
+  {
+   "ats": "greenhouse",
+   "company": "Figma",
+   "title": "Account Executive, Enterprise (Berlin, Germany)",
+   "department": "Sales",
+   "location": "Berlin, Germany",
+   "country": "DE",
+   "isRemote": false,
+   "postedAt": "2026-02-03T12:13:56.000Z",
+   "url": "https://boards.greenhouse.io/figma/jobs/5783812004?gh_jid=5783812004",
+   "salary": ""
+  },
+  {
+   "ats": "teamtailor",
+   "company": "Polestar",
+   "title": "Senior Customs Operations Specialist",
+   "department": "Quality & Logistics",
+   "location": "Göteborg, Sweden",
+   "country": "SE",
+   "isRemote": false,
+   "postedAt": "2026-09-30T07:33:49.000Z",
+   "url": "https://polestar.teamtailor.com/jobs/8476851-senior-customs-operations-specialist",
+   "salary": ""
+  },
+  {
+   "ats": "teamtailor",
+   "company": "Polestar",
+   "title": "Team Lead, Group Consolidation",
+   "department": "Finance",
+   "location": "Göteborg, Sweden",
+   "country": "SE",
+   "isRemote": false,
+   "postedAt": "2026-04-17T13:33:14.000Z",
+   "url": "https://polestar.teamtailor.com/jobs/7592571-team-lead-group-consolidation",
+   "salary": ""
+  },
+  {
+   "ats": "teamtailor",
+   "company": "Polestar",
+   "title": "Product Cybersecurity Engineer",
+   "department": "Digital",
+   "location": "Göteborg, Sweden",
+   "country": "SE",
+   "isRemote": false,
+   "postedAt": "2026-09-02T14:14:52.000Z",
+   "url": "https://polestar.teamtailor.com/jobs/8311441-product-cybersecurity-engineer",
+   "salary": ""
+  }
+ ],
+ "india": [
+  {
+   "ats": "workable",
+   "company": "Apna",
+   "title": "Full Stack Developer",
+   "city": "Bengaluru",
+   "seniority": "mid",
+   "experienceYears": {
+    "min": 3,
+    "max": 6
+   },
+   "postedAt": "2026-03-18T00:00:00.000Z",
+   "url": "https://apply.workable.com/j/5883933961",
+   "salaryLpa": null
+  },
+  {
+   "ats": "workable",
+   "company": "Apna",
+   "title": "Full Stack Software Developer",
+   "city": "Bengaluru",
+   "seniority": "entry",
+   "experienceYears": {
+    "min": 1,
+    "max": 2
+   },
+   "postedAt": "2026-10-27T00:00:00.000Z",
+   "url": "https://apply.workable.com/j/B5820BBA78",
+   "salaryLpa": null
+  },
+  {
+   "ats": "workable",
+   "company": "Apna",
+   "title": "Hindi - AI Voice Data Collection Project",
+   "city": null,
+   "seniority": null,
+   "experienceYears": null,
+   "postedAt": "2026-09-28T00:00:00.000Z",
+   "url": "https://apply.workable.com/j/1202FA72AC",
+   "salaryLpa": null
+  },
+  {
+   "ats": "workable",
+   "company": "Apna",
+   "title": "Indian English - AI Voice Data Collection Project",
+   "city": null,
+   "seniority": null,
+   "experienceYears": null,
+   "postedAt": "2026-09-28T00:00:00.000Z",
+   "url": "https://apply.workable.com/j/EDD32E7A07",
+   "salaryLpa": null
+  },
+  {
+   "ats": "workable",
+   "company": "Apna",
+   "title": "Odia - AI Voice Data Collection Project",
+   "city": null,
+   "seniority": null,
+   "experienceYears": null,
+   "postedAt": "2026-09-28T00:00:00.000Z",
+   "url": "https://apply.workable.com/j/056A4AB701",
+   "salaryLpa": null
+  },
+  {
+   "ats": "workable",
+   "company": "Apna",
+   "title": "Odia Transcriber | AI Voice Data Project",
+   "city": null,
+   "seniority": "entry",
+   "experienceYears": {
+    "min": 1,
+    "max": 3
+   },
+   "postedAt": "2026-09-23T00:00:00.000Z",
+   "url": "https://apply.workable.com/j/AB4C80F676",
+   "salaryLpa": null
+  },
+  {
+   "ats": "workable",
+   "company": "Apna",
+   "title": "Senior Software Engineer - Backend",
+   "city": "Bengaluru",
+   "seniority": "senior",
+   "experienceYears": {
+    "min": 4,
+    "max": 6
+   },
+   "postedAt": "2026-10-13T00:00:00.000Z",
+   "url": "https://apply.workable.com/j/051E6D0905",
+   "salaryLpa": null
+  },
+  {
+   "ats": "workable",
+   "company": "Apna",
+   "title": "Software Development Engineer Testing",
+   "city": "Bengaluru",
+   "seniority": null,
+   "experienceYears": null,
+   "postedAt": "2024-11-24T00:00:00.000Z",
+   "url": "https://apply.workable.com/j/CA75E8C784",
+   "salaryLpa": null
+  },
+  {
+   "ats": "workable",
+   "company": "Apna",
+   "title": "Support Engineer",
+   "city": "Bengaluru",
+   "seniority": "mid",
+   "experienceYears": {
+    "min": 2,
+    "max": 3
+   },
+   "postedAt": "2025-07-14T00:00:00.000Z",
+   "url": "https://apply.workable.com/j/9FDA850C62",
+   "salaryLpa": null
+  },
+  {
+   "ats": "greenhouse",
+   "company": "InMobi",
+   "title": "SDE II - Data Engineer",
+   "city": "Lucknow",
+   "seniority": "mid",
+   "experienceYears": {
+    "min": 2,
+    "max": 5
+   },
+   "postedAt": "2026-10-28T09:16:04.000Z",
+   "url": "https://job-boards.greenhouse.io/inmobi/jobs/7747785",
+   "salaryLpa": null
+  },
+  {
+   "ats": "greenhouse",
+   "company": "InMobi",
+   "title": "SDE III - Engineering",
+   "city": "Lucknow",
+   "seniority": "senior",
+   "experienceYears": {
+    "min": 5,
+    "max": 8
+   },
+   "postedAt": "2026-10-12T12:48:22.000Z",
+   "url": "https://job-boards.greenhouse.io/inmobi/jobs/8159407",
+   "salaryLpa": null
+  },
+  {
+   "ats": "greenhouse",
+   "company": "InMobi",
+   "title": "SDE IV (ML Engineering)",
+   "city": "Lucknow",
+   "seniority": null,
+   "experienceYears": null,
+   "postedAt": "2026-09-16T12:49:00.000Z",
+   "url": "https://job-boards.greenhouse.io/inmobi/jobs/8073655",
+   "salaryLpa": null
+  }
+ ],
+ "contacts": [
+  {
+   "domain": "plausible.io",
+   "companyName": "Plausible Analytics",
+   "status": "ok",
+   "roleEmails": [
+    "hello@plausible.io"
+   ],
+   "phonesFound": 0,
+   "socialNetworks": [
+    "bluesky",
+    "github",
+    "linkedin",
+    "x"
+   ],
+   "contactPageUrl": "https://plausible.io/contact",
+   "pagesCrawled": 6,
+   "durationMs": 440
+  },
+  {
+   "domain": "fsf.org",
+   "companyName": "Free Software Foundation",
+   "status": "ok",
+   "roleEmails": [
+    "info@fsf.org",
+    "campaigns@fsf.org"
+   ],
+   "phonesFound": 1,
+   "socialNetworks": [
+    "bluesky"
+   ],
+   "contactPageUrl": "https://www.fsf.org/about/contact/",
+   "pagesCrawled": 4,
+   "durationMs": 1119
+  },
+  {
+   "domain": "gitlab.com",
+   "companyName": "GitLab",
+   "status": "ok",
+   "roleEmails": [],
+   "phonesFound": 0,
+   "socialNetworks": [
+    "facebook",
+    "instagram",
+    "linkedin",
+    "x",
+    "youtube"
+   ],
+   "contactPageUrl": "https://about.gitlab.com/company/contact/",
+   "pagesCrawled": 6,
+   "durationMs": 1124
+  },
+  {
+   "domain": "mozilla.org",
+   "companyName": "Mozilla",
+   "status": "ok",
+   "roleEmails": [
+    "trademark-permissions@mozilla.com"
+   ],
+   "phonesFound": 0,
+   "socialNetworks": [
+    "bluesky",
+    "facebook",
+    "instagram",
+    "linkedin",
+    "tiktok",
+    "youtube"
+   ],
+   "contactPageUrl": "https://www.mozilla.org/en-US/contact/",
+   "pagesCrawled": 6,
+   "durationMs": 2201
+  },
+  {
+   "domain": "nobroker.in",
+   "companyName": "NoBroker",
+   "status": "ok",
+   "roleEmails": [
+    "hello@nobroker.in",
+    "assist@nobroker.in"
+   ],
+   "phonesFound": 1,
+   "socialNetworks": [
+    "facebook",
+    "instagram",
+    "linkedin",
+    "x",
+    "youtube"
+   ],
+   "contactPageUrl": null,
+   "pagesCrawled": 6,
+   "durationMs": 4359
+  }
+ ],
+ "sheets": [
+  {
+   "Student Name": "Alexandra",
+   "Gender": "Female",
+   "Class Level": "4. Senior",
+   "Home State": "CA",
+   "Major": "English",
+   "Extracurricular Activity": "Drama Club"
+  },
+  {
+   "Student Name": "Andrew",
+   "Gender": "Male",
+   "Class Level": "1. Freshman",
+   "Home State": "SD",
+   "Major": "Math",
+   "Extracurricular Activity": "Lacrosse"
+  },
+  {
+   "Student Name": "Anna",
+   "Gender": "Female",
+   "Class Level": "1. Freshman",
+   "Home State": "NC",
+   "Major": "English",
+   "Extracurricular Activity": "Basketball"
+  },
+  {
+   "Student Name": "Becky",
+   "Gender": "Female",
+   "Class Level": "2. Sophomore",
+   "Home State": "SD",
+   "Major": "Art",
+   "Extracurricular Activity": "Baseball"
+  },
+  {
+   "Student Name": "Benjamin",
+   "Gender": "Male",
+   "Class Level": "4. Senior",
+   "Home State": "WI",
+   "Major": "English",
+   "Extracurricular Activity": "Basketball"
+  },
+  {
+   "Student Name": "Carl",
+   "Gender": "Male",
+   "Class Level": "3. Junior",
+   "Home State": "MD",
+   "Major": "Art",
+   "Extracurricular Activity": "Debate"
+  },
+  {
+   "Student Name": "Carrie",
+   "Gender": "Female",
+   "Class Level": "3. Junior",
+   "Home State": "NE",
+   "Major": "English",
+   "Extracurricular Activity": "Track & Field"
+  },
+  {
+   "Student Name": "Dorothy",
+   "Gender": "Female",
+   "Class Level": "4. Senior",
+   "Home State": "MD",
+   "Major": "Math",
+   "Extracurricular Activity": "Lacrosse"
+  }
+ ]
+}

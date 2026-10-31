@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1921 526" role="img" aria-label="n8n workflow 04-job-posts-tracker" font-family="Inter,system-ui,sans-serif">
+<title>n8n workflow 04-job-posts-tracker</title><rect width="100%" height="100%" fill="#0b1020" rx="12"/>
+<path d="M210,173 C220,173 220,173 229,173" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M419,173 C428,173 428,173 438,173" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M628,173 C704,173 704,155 780,155" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M628,173 C808,173 808,479 989,479" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M970,155 C980,155 980,155 989,155" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M1179,155 C1188,155 1188,155 1198,155" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M1388,155 C1436,155 1436,65 1483,65" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M1388,155 C1436,155 1436,281 1483,281" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M1179,479 C1331,479 1331,65 1483,65" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M1179,479 C1331,479 1331,281 1483,281" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M1673,65 C1692,65 1692,47 1711,47" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M1673,281 C1692,281 1692,263 1711,263" stroke="#4b5578" stroke-width="2" fill="none"/>
+<g><rect x="20" y="146" width="190" height="54" rx="9" fill="#141a2e" stroke="#34f5c5" stroke-width="2"/><rect x="20" y="146" width="6" height="54" rx="3" fill="#34f5c5"/><text x="36" y="169" fill="#e6e9fb" font-size="13" font-weight="600">Every 6 hours</text><text x="36" y="187" fill="#9aa3c7" font-size="11">Schedule</text></g>
+<g><rect x="229" y="146" width="190" height="54" rx="9" fill="#141a2e" stroke="#9aa3c7" stroke-width="2"/><rect x="229" y="146" width="6" height="54" rx="3" fill="#9aa3c7"/><text x="245" y="169" fill="#e6e9fb" font-size="13" font-weight="600">Set job search settings</text><text x="245" y="187" fill="#9aa3c7" font-size="11">Set</text></g>
+<g><rect x="438" y="146" width="190" height="54" rx="9" fill="#141a2e" stroke="#9aa3c7" stroke-width="2"/><rect x="438" y="146" width="6" height="54" rx="3" fill="#9aa3c7"/><text x="454" y="169" fill="#e6e9fb" font-size="13" font-weight="600">Fetch new jobs from ATS…</text><text x="454" y="187" fill="#9aa3c7" font-size="11">HTTP Request</text></g>
+<g><rect x="780" y="128" width="190" height="54" rx="9" fill="#141a2e" stroke="#a78bfa" stroke-width="2"/><rect x="780" y="128" width="6" height="54" rx="3" fill="#a78bfa"/><text x="796" y="151" fill="#e6e9fb" font-size="13" font-weight="600">Filter, rank and group …</text><text x="796" y="169" fill="#9aa3c7" font-size="11">Code</text></g>
+<g><rect x="989" y="128" width="190" height="54" rx="9" fill="#141a2e" stroke="#60a5fa" stroke-width="2"/><rect x="989" y="128" width="6" height="54" rx="3" fill="#60a5fa"/><text x="1005" y="151" fill="#e6e9fb" font-size="13" font-weight="600">Log jobs to tracker she…</text><text x="1005" y="169" fill="#9aa3c7" font-size="11">Google Sheets</text></g>
+<g><rect x="1198" y="128" width="190" height="54" rx="9" fill="#141a2e" stroke="#a78bfa" stroke-width="2"/><rect x="1198" y="128" width="6" height="54" rx="3" fill="#a78bfa"/><text x="1214" y="151" fill="#e6e9fb" font-size="13" font-weight="600">Build job digest</text><text x="1214" y="169" fill="#9aa3c7" font-size="11">Code</text></g>
+<g><rect x="989" y="452" width="190" height="54" rx="9" fill="#141a2e" stroke="#a78bfa" stroke-width="2"/><rect x="989" y="452" width="6" height="54" rx="3" fill="#a78bfa"/><text x="1005" y="475" fill="#e6e9fb" font-size="13" font-weight="600">Build failure notice</text><text x="1005" y="493" fill="#9aa3c7" font-size="11">Code</text></g>
+<g><rect x="1483" y="38" width="190" height="54" rx="9" fill="#141a2e" stroke="#fbbf24" stroke-width="2"/><rect x="1483" y="38" width="6" height="54" rx="3" fill="#fbbf24"/><text x="1499" y="61" fill="#e6e9fb" font-size="13" font-weight="600">Telegram on?</text><text x="1499" y="79" fill="#9aa3c7" font-size="11">If</text></g>
+<g><rect x="1483" y="254" width="190" height="54" rx="9" fill="#141a2e" stroke="#fbbf24" stroke-width="2"/><rect x="1483" y="254" width="6" height="54" rx="3" fill="#fbbf24"/><text x="1499" y="277" fill="#e6e9fb" font-size="13" font-weight="600">Slack on?</text><text x="1499" y="295" fill="#9aa3c7" font-size="11">If</text></g>
+<g><rect x="1711" y="20" width="190" height="54" rx="9" fill="#141a2e" stroke="#f472b6" stroke-width="2"/><rect x="1711" y="20" width="6" height="54" rx="3" fill="#f472b6"/><text x="1727" y="43" fill="#e6e9fb" font-size="13" font-weight="600">Send to Telegram</text><text x="1727" y="61" fill="#9aa3c7" font-size="11">Telegram</text></g>
+<g><rect x="1711" y="236" width="190" height="54" rx="9" fill="#141a2e" stroke="#f472b6" stroke-width="2"/><rect x="1711" y="236" width="6" height="54" rx="3" fill="#f472b6"/><text x="1727" y="259" fill="#e6e9fb" font-size="13" font-weight="600">Post to Slack</text><text x="1727" y="277" fill="#9aa3c7" font-size="11">Slack</text></g>
+</svg>

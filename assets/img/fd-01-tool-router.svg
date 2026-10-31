@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5037 328" role="img" aria-label="AI Front Desk workflow 01-tool-router" font-family="Inter,system-ui,sans-serif">
+<title>AI Front Desk workflow 01-tool-router</title><rect width="100%" height="100%" fill="#0b1020" rx="12"/>
+<path d="M210,191 C224,191 224,191 238,191" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M428,191 C443,191 443,191 457,191" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M647,191 C661,191 661,191 676,191" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M866,191 C880,191 880,191 894,191" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M1084,191 C1098,191 1098,191 1112,191" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M1302,191 C1317,191 1317,191 1331,191" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M1521,191 C1535,191 1535,47 1550,47" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M1521,191 C1754,191 1754,191 1986,191" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M1740,47 C1754,47 1754,47 1768,47" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M1958,47 C1972,47 1972,191 1986,191" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M2176,191 C2191,191 2191,191 2205,191" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M2395,191 C2409,191 2409,47 2424,47" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M2395,191 C2628,191 2628,191 2860,191" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M2614,47 C2628,47 2628,47 2642,47" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M2832,47 C2846,47 2846,191 2860,191" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M3050,191 C3065,191 3065,191 3079,191" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M3269,191 C3283,191 3283,191 3298,191" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M3488,191 C3502,191 3502,47 3516,47" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M3488,191 C3720,191 3720,191 3953,191" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M3706,47 C3720,47 3720,47 3734,47" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M3924,47 C3939,47 3939,191 3953,191" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M4143,191 C4157,191 4157,47 4172,47" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M4143,191 C4376,191 4376,191 4608,191" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M4362,47 C4376,47 4376,47 4390,47" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M4580,47 C4594,47 4594,191 4608,191" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M4798,191 C4813,191 4813,101 4827,101" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M4798,191 C4813,191 4813,281 4827,281" stroke="#4b5578" stroke-width="2" fill="none"/>
+<g><rect x="20" y="164" width="190" height="54" rx="9" fill="#141a2e" stroke="#34f5c5" stroke-width="2"/><rect x="20" y="164" width="6" height="54" rx="3" fill="#34f5c5"/><text x="36" y="187" fill="#e6e9fb" font-size="13" font-weight="600">Tool Webhook</text><text x="36" y="205" fill="#9aa3c7" font-size="11">Webhook</text></g>
+<g><rect x="238" y="164" width="190" height="54" rx="9" fill="#141a2e" stroke="#9aa3c7" stroke-width="2"/><rect x="238" y="164" width="6" height="54" rx="3" fill="#9aa3c7"/><text x="254" y="187" fill="#e6e9fb" font-size="13" font-weight="600">Config</text><text x="254" y="205" fill="#9aa3c7" font-size="11">Set</text></g>
+<g><rect x="457" y="164" width="190" height="54" rx="9" fill="#141a2e" stroke="#60a5fa" stroke-width="2"/><rect x="457" y="164" width="6" height="54" rx="3" fill="#60a5fa"/><text x="473" y="187" fill="#e6e9fb" font-size="13" font-weight="600">Read Services</text><text x="473" y="205" fill="#9aa3c7" font-size="11">Google Sheets</text></g>
+<g><rect x="676" y="164" width="190" height="54" rx="9" fill="#141a2e" stroke="#60a5fa" stroke-width="2"/><rect x="676" y="164" width="6" height="54" rx="3" fill="#60a5fa"/><text x="692" y="187" fill="#e6e9fb" font-size="13" font-weight="600">Read FAQ</text><text x="692" y="205" fill="#9aa3c7" font-size="11">Google Sheets</text></g>
+<g><rect x="894" y="164" width="190" height="54" rx="9" fill="#141a2e" stroke="#60a5fa" stroke-width="2"/><rect x="894" y="164" width="6" height="54" rx="3" fill="#60a5fa"/><text x="910" y="187" fill="#e6e9fb" font-size="13" font-weight="600">Read Appointments</text><text x="910" y="205" fill="#9aa3c7" font-size="11">Google Sheets</text></g>
+<g><rect x="1112" y="164" width="190" height="54" rx="9" fill="#141a2e" stroke="#a78bfa" stroke-width="2"/><rect x="1112" y="164" width="6" height="54" rx="3" fill="#a78bfa"/><text x="1128" y="187" fill="#e6e9fb" font-size="13" font-weight="600">Handle tool calls</text><text x="1128" y="205" fill="#9aa3c7" font-size="11">Code</text></g>
+<g><rect x="1331" y="164" width="190" height="54" rx="9" fill="#141a2e" stroke="#fbbf24" stroke-width="2"/><rect x="1331" y="164" width="6" height="54" rx="3" fill="#fbbf24"/><text x="1347" y="187" fill="#e6e9fb" font-size="13" font-weight="600">Any appointment changes?</text><text x="1347" y="205" fill="#9aa3c7" font-size="11">If</text></g>
+<g><rect x="1550" y="20" width="190" height="54" rx="9" fill="#141a2e" stroke="#a78bfa" stroke-width="2"/><rect x="1550" y="20" width="6" height="54" rx="3" fill="#a78bfa"/><text x="1566" y="43" fill="#e6e9fb" font-size="13" font-weight="600">Appointment rows</text><text x="1566" y="61" fill="#9aa3c7" font-size="11">Code</text></g>
+<g><rect x="1768" y="20" width="190" height="54" rx="9" fill="#141a2e" stroke="#60a5fa" stroke-width="2"/><rect x="1768" y="20" width="6" height="54" rx="3" fill="#60a5fa"/><text x="1784" y="43" fill="#e6e9fb" font-size="13" font-weight="600">Save appointments</text><text x="1784" y="61" fill="#9aa3c7" font-size="11">Google Sheets</text></g>
+<g><rect x="1986" y="164" width="190" height="54" rx="9" fill="#141a2e" stroke="#a78bfa" stroke-width="2"/><rect x="1986" y="164" width="6" height="54" rx="3" fill="#a78bfa"/><text x="2002" y="187" fill="#e6e9fb" font-size="13" font-weight="600">After appointments</text><text x="2002" y="205" fill="#9aa3c7" font-size="11">Code</text></g>
+<g><rect x="2205" y="164" width="190" height="54" rx="9" fill="#141a2e" stroke="#fbbf24" stroke-width="2"/><rect x="2205" y="164" width="6" height="54" rx="3" fill="#fbbf24"/><text x="2221" y="187" fill="#e6e9fb" font-size="13" font-weight="600">Any messages?</text><text x="2221" y="205" fill="#9aa3c7" font-size="11">If</text></g>
+<g><rect x="2424" y="20" width="190" height="54" rx="9" fill="#141a2e" stroke="#a78bfa" stroke-width="2"/><rect x="2424" y="20" width="6" height="54" rx="3" fill="#a78bfa"/><text x="2440" y="43" fill="#e6e9fb" font-size="13" font-weight="600">Message rows</text><text x="2440" y="61" fill="#9aa3c7" font-size="11">Code</text></g>
+<g><rect x="2642" y="20" width="190" height="54" rx="9" fill="#141a2e" stroke="#60a5fa" stroke-width="2"/><rect x="2642" y="20" width="6" height="54" rx="3" fill="#60a5fa"/><text x="2658" y="43" fill="#e6e9fb" font-size="13" font-weight="600">Save messages</text><text x="2658" y="61" fill="#9aa3c7" font-size="11">Google Sheets</text></g>
+<g><rect x="2860" y="164" width="190" height="54" rx="9" fill="#141a2e" stroke="#a78bfa" stroke-width="2"/><rect x="2860" y="164" width="6" height="54" rx="3" fill="#a78bfa"/><text x="2876" y="187" fill="#e6e9fb" font-size="13" font-weight="600">After messages</text><text x="2876" y="205" fill="#9aa3c7" font-size="11">Code</text></g>
+<g><rect x="3079" y="164" width="190" height="54" rx="9" fill="#141a2e" stroke="#34f5c5" stroke-width="2"/><rect x="3079" y="164" width="6" height="54" rx="3" fill="#34f5c5"/><text x="3095" y="187" fill="#e6e9fb" font-size="13" font-weight="600">Respond to voice platfo…</text><text x="3095" y="205" fill="#9aa3c7" font-size="11">Respond</text></g>
+<g><rect x="3298" y="164" width="190" height="54" rx="9" fill="#141a2e" stroke="#fbbf24" stroke-width="2"/><rect x="3298" y="164" width="6" height="54" rx="3" fill="#fbbf24"/><text x="3314" y="187" fill="#e6e9fb" font-size="13" font-weight="600">Any FAQ gaps?</text><text x="3314" y="205" fill="#9aa3c7" font-size="11">If</text></g>
+<g><rect x="3516" y="20" width="190" height="54" rx="9" fill="#141a2e" stroke="#a78bfa" stroke-width="2"/><rect x="3516" y="20" width="6" height="54" rx="3" fill="#a78bfa"/><text x="3532" y="43" fill="#e6e9fb" font-size="13" font-weight="600">FAQ gap rows</text><text x="3532" y="61" fill="#9aa3c7" font-size="11">Code</text></g>
+<g><rect x="3734" y="20" width="190" height="54" rx="9" fill="#141a2e" stroke="#60a5fa" stroke-width="2"/><rect x="3734" y="20" width="6" height="54" rx="3" fill="#60a5fa"/><text x="3750" y="43" fill="#e6e9fb" font-size="13" font-weight="600">Log FAQ gaps</text><text x="3750" y="61" fill="#9aa3c7" font-size="11">Google Sheets</text></g>
+<g><rect x="3953" y="164" width="190" height="54" rx="9" fill="#141a2e" stroke="#fbbf24" stroke-width="2"/><rect x="3953" y="164" width="6" height="54" rx="3" fill="#fbbf24"/><text x="3969" y="187" fill="#e6e9fb" font-size="13" font-weight="600">Any contacts?</text><text x="3969" y="205" fill="#9aa3c7" font-size="11">If</text></g>
+<g><rect x="4172" y="20" width="190" height="54" rx="9" fill="#141a2e" stroke="#a78bfa" stroke-width="2"/><rect x="4172" y="20" width="6" height="54" rx="3" fill="#a78bfa"/><text x="4188" y="43" fill="#e6e9fb" font-size="13" font-weight="600">Contact rows</text><text x="4188" y="61" fill="#9aa3c7" font-size="11">Code</text></g>
+<g><rect x="4390" y="20" width="190" height="54" rx="9" fill="#141a2e" stroke="#60a5fa" stroke-width="2"/><rect x="4390" y="20" width="6" height="54" rx="3" fill="#60a5fa"/><text x="4406" y="43" fill="#e6e9fb" font-size="13" font-weight="600">Upsert contacts</text><text x="4406" y="61" fill="#9aa3c7" font-size="11">Google Sheets</text></g>
+<g><rect x="4608" y="164" width="190" height="54" rx="9" fill="#141a2e" stroke="#a78bfa" stroke-width="2"/><rect x="4608" y="164" width="6" height="54" rx="3" fill="#a78bfa"/><text x="4624" y="187" fill="#e6e9fb" font-size="13" font-weight="600">Alert text</text><text x="4624" y="205" fill="#9aa3c7" font-size="11">Code</text></g>
+<g><rect x="4827" y="74" width="190" height="54" rx="9" fill="#141a2e" stroke="#9aa3c7" stroke-width="2"/><rect x="4827" y="74" width="6" height="54" rx="3" fill="#9aa3c7"/><text x="4843" y="97" fill="#e6e9fb" font-size="13" font-weight="600">Slack alert</text><text x="4843" y="115" fill="#9aa3c7" font-size="11">HTTP Request</text></g>
+<g><rect x="4827" y="254" width="190" height="54" rx="9" fill="#141a2e" stroke="#f472b6" stroke-width="2"/><rect x="4827" y="254" width="6" height="54" rx="3" fill="#f472b6"/><text x="4843" y="277" fill="#e6e9fb" font-size="13" font-weight="600">Email alert</text><text x="4843" y="295" fill="#9aa3c7" font-size="11">Email</text></g>
+</svg>

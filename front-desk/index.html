@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI front desk demo: try the booking engine in your browser | Oarsman AI</title>
+<meta name="description" content="Play a caller at a fictional salon. Booking, FAQ, cancel and escalation run on the real AI Front Desk engine from our n8n kit, in your browser. Honest labels on what is scripted.">
+<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../"><span class="mark">O</span>Oarsman AI</a>
+  <nav class="links"><a class="on" href="./">AI front desk</a><a href="../automation/">Automation &amp; scrapers</a></nav>
+</div></header>
+<main class="wrap">
+  <div class="hero">
+    <h1>AI front desk: <span class="grad">try the booking brain</span></h1>
+    <p class="lead">You're a caller at <strong>Maple Street Salon</strong>, a made-up business. Pick what to say. Every booking, answer, cancel and hand-off is decided by the real engine from our n8n AI receptionist kit, running right here in your browser. Watch the Google Sheet tabs fill in.</p>
+    <p><a class="btn primary" href="https://vishalrwt.gumroad.com/l/obpxq">Get the full kit</a></p>
+  </div>
+
+  <section>
+    <div class="honest">
+      <strong>What's real and what isn't on this page</strong>
+      <ul class="clean">
+        <li><span class="tag real">Real</span>The decision logic: availability, opening hours, buffers, minimum notice, double-booking refusal, FAQ matching, "only the number that booked can cancel", and staffed-hours escalation. It is the code from the kit's <code>01 Tool Router</code> workflow (v1.0.4), copied unchanged, getting the same request format Vapi sends.</li>
+        <li><span class="tag sim">Scripted</span>The conversation. In a real deployment an AI voice model (Vapi or Retell) understands the caller and decides which tool to call. Here you pick the caller's lines from buttons, and the receptionist's wording is a fixed template built from the engine's answer.</li>
+        <li><span class="tag sim">Simulated</span>The "Google Sheet" and alerts are tables in your browser. Nothing is saved, sent or called. Reload to reset.</li>
+        <li><span class="tag sample">Sample</span>The salon, its services, prices, FAQ, phone numbers (555 numbers) and the people (Ann Lee, Sam Demo) are fictional.</li>
+        <li>This demo has never answered a real phone call. We haven't run a live voice call yet because that needs a paid voice-platform account. No client has used it yet, so there are no client results to show.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="grid g2">
+    <div class="card">
+      <h2>The call</h2>
+      <p class="muted small" id="clock"></p>
+      <div class="tabs" id="caller-pick"><button data-p="+15550142">Caller: +1 555 0142 (Sam)</button><button data-p="+15550199">Caller: +1 555 0199 (someone else)</button></div>
+      <div class="chat" id="chat" aria-live="polite"></div>
+      <div class="choices" id="choices"></div>
+      <form class="free" id="free-form"><input id="free-q" maxlength="200" placeholder="Or type any question for the FAQ, e.g. do you take Apple Pay?" aria-label="Ask the FAQ a question"><button class="btn primary" type="submit">Ask</button></form>
+      <p><button class="btn" id="reset" type="button">Start over</button></p>
+    </div>
+    <div class="card">
+      <h2>The salon's Google Sheet <span class="tag sim">in your browser</span></h2>
+      <div class="tabs" id="sheet-tabs">
+        <button data-tab="Appointments">Appointments</button><button data-tab="Contacts">Contacts</button><button data-tab="Messages">Messages</button><button data-tab="FAQ_Gaps">FAQ_Gaps</button><button data-tab="Alerts">Alerts</button>
+      </div>
+      <div class="table-wrap" id="sheet"></div>
+      <p class="muted small">In the kit these are tabs of the owner's own Google Sheet. "Alerts" are what would go to the owner by Slack and email.</p>
+      <h3 style="margin-top:16px">Last webhook round trip</h3>
+      <p class="muted small">Request in Vapi's <code>tool-calls</code> format, and the engine's reply.</p>
+      <pre id="wire-req"></pre>
+      <pre id="wire-res" style="margin-top:8px"></pre>
+      <p class="muted small" id="wire-writes"></p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Things to try</h2>
+    <div class="grid g3">
+      <div class="card small"><strong>Book, then book the same slot again.</strong> A platform retrying the tool call gets the same booking back ("already saved"), not a duplicate row.</div>
+      <div class="card small"><strong>Ask for Ann's 2 PM slot.</strong> It's refused and the nearest free times are offered. The 10-minute buffer around her booking is respected too.</div>
+      <div class="card small"><strong>Switch to the other caller and cancel.</strong> It refuses: only the number that made a booking can cancel it by phone.</div>
+      <div class="card small"><strong>Ask something not in the FAQ.</strong> It won't make up an answer, and the question is logged to FAQ_Gaps.</div>
+      <div class="card small"><strong>Colour on the blocked morning.</strong> That morning is blocked for staff training, so it moves to the next free slot that fits a 90-minute service.</div>
+      <div class="card small"><strong>Ask for the owner.</strong> During staffed hours (Mon–Fri 9–5 New York) it transfers. Outside them it takes an urgent message and alerts the owner.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>How the real kit is wired <span class="tag real">from the real workflow files</span></h2>
+    <p class="muted">Five n8n workflows. These diagrams are drawn straight from the shipped <code>.json</code> files (node names, types and connections). Nothing is added for show.</p>
+    <div class="tabs" id="wf-tabs">
+      <button data-src="../assets/img/fd-01-tool-router.svg" class="on">01 Tool router (24 nodes)</button>
+      <button data-src="../assets/img/fd-02-call-events.svg">02 Call events (16)</button>
+      <button data-src="../assets/img/fd-03-daily-report.svg">03 Daily report (9)</button>
+      <button data-src="../assets/img/fd-04-calendar-mirror.svg">04 Calendar mirror (16)</button>
+      <button data-src="../assets/img/fd-05-error-alerts.svg">05 Error alerts (5)</button>
+    </div>
+    <div class="dscroll"><img class="diagram wide" id="wf-img" src="../assets/img/fd-01-tool-router.svg" alt="Diagram of the AI Front Desk n8n workflow" loading="lazy"></div><p class="muted small">Wide diagram: scroll sideways on a phone.</p>
+    <div class="grid g3" style="margin-top:14px">
+      <div class="card small"><strong>1. Call comes in.</strong> The caller talks to an AI voice assistant on Vapi or Retell, on the owner's account and phone number.</div>
+      <div class="card small"><strong>2. Tools hit n8n.</strong> The assistant calls 6 tools (check availability, book, cancel, answer FAQ, take message, escalate). Each one is a webhook to workflow 01, which reads and writes the owner's Google Sheet.</div>
+      <div class="card small"><strong>3. After the call.</strong> Workflow 02 logs the call with outcome and summary, and flags missed opportunities. 03 emails a daily report, 04 mirrors bookings to Google Calendar, and 05 alerts on errors.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Test results <span class="tag real">from the kit's test report</span></h2>
+    <div class="grid g3">
+      <div class="card"><div class="stat">38 / 38<small>unit tests: booking engine, parsing, FAQ, escalation, reports, workflow checks</small></div></div>
+      <div class="card"><div class="stat">26 / 26<small>end-to-end tests on a real n8n 2.44.6 with live webhooks (Google, Slack and email replaced by a local mock)</small></div></div>
+      <div class="card"><div class="stat">12 / 12<small>scheduled-workflow tests: daily report, calendar mirror, error alerts, Google Calendar outage and recovery</small></div></div>
+    </div>
+    <div class="card" style="margin-top:14px">
+      <p><strong>Live check on n8n Cloud with a real Google Sheet and Google Calendar (27 Oct 2026):</strong> all 7 tool paths returned the expected results, at about 1.7 to 5.7 seconds per tool call including Google Sheets. A booking created a real Calendar event, and cancelling it deleted the event.</p>
+      <p class="muted small" style="margin-bottom:0"><strong>Not tested yet:</strong> a real phone call or AI chat (voice quality, speech recognition, how well the AI model follows the prompt). That needs a paid Vapi or Retell account. The kit includes a 10-call go-live checklist for that step.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Get it, or have it set up</h2>
+    <div class="grid g2">
+      <div class="card"><h3>AI Front Desk kit for n8n</h3><p class="muted small">The 5 workflows, a 7-tab Google Sheet template, Vapi and Retell tool definitions, a setup script, a call simulator, setup guide and test suites. Runs on the owner's own n8n, Google and voice-platform accounts. Voice minutes are billed by the voice platform.</p><a class="btn primary" href="https://vishalrwt.gumroad.com/l/obpxq">See the kit on Gumroad</a></div>
+      <div class="card"><h3>Want it built for your business?</h3><p class="muted small">If you found this page through a proposal, reply there. Setup covers your services, hours and FAQ, a test round with you before go-live, and handover of everything to your own accounts.</p></div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap">Oarsman AI. AI tools helped write this page and the kit's code. The demo runs entirely in your browser: no tracking, no cookies, no API keys, nothing sent anywhere. Date/time library: <a href="https://moment.github.io/luxon/">Luxon</a> (MIT licence). <a href="../">All demos</a></div></footer>
+<script src="../assets/js/luxon.min.js"></script>
+<script>window.DateTime = luxon.DateTime;</script>
+<script src="../assets/js/frontdesk-core.js"></script>
+<script src="../assets/js/frontdesk-demo.js"></script>
+<script>
+document.querySelectorAll('#wf-tabs button').forEach(function (b) { b.onclick = function () { document.getElementById('wf-img').src = b.dataset.src; document.querySelectorAll('#wf-tabs button').forEach(function (x) { x.classList.toggle('on', x === b); }); }; });
+</script>
+</body>
+</html>
