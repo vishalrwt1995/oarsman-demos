@@ -32,19 +32,19 @@
       <li><b>Retrieval:</b> BM25 ranking with stemming, stop-words and a small hand-written synonym list for the domain (for example PTO to vacation, 2FA to MFA). It runs entirely in the browser.</li>
       <li><b>Answers:</b> extractive. The assistant picks the best one or two sentences from the top passages of the same section and quotes them word for word, with numbered citations that scroll to and highlight the source paragraph.</li>
       <li><b>"I don't know" gate:</b> it refuses when the top BM25 score is below 3.0, or when the best section covers less than half of the question's key words. The reason and the scores are shown under every answer.</li>
-      <li><b>Eval panel:</b> {{EVAL_TOTAL}} questions ({{EVAL_IN}} answerable, {{EVAL_OOS}} not covered by the handbook). An answerable question passes only when the first citation is the right section and the answer contains the expected fact. An uncovered question passes only when the assistant says it doesn't know.</li>
+      <li><b>Eval panel:</b> 34 questions (26 answerable, 8 not covered by the handbook). An answerable question passes only when the first citation is the right section and the answer contains the expected fact. An uncovered question passes only when the assistant says it doesn't know.</li>
     </ul>
     <img class="shot" src="shot.jpg" alt="Handbook assistant answering a vacation question with a citation, next to the highlighted handbook paragraph" width="1280" height="786" loading="lazy">
   </section>
   <section>
-    <h2>Result (measured on {{DATE}})</h2>
+    <h2>Result (measured on 31 Oct 2026 (IST))</h2>
     <div class="nums">
-      <div><b>{{EVAL}}</b><span>eval questions pass (live in the browser)</span></div>
-      <div><b>{{OOS}}</b><span>uncovered questions correctly refused</span></div>
-      <div><b>{{E2E}}</b><span>headless-Chrome checks pass, desktop and mobile</span></div>
-      <div><b>{{LH_M}}</b><span>Lighthouse mobile: Perf / A11y / Best pr. / SEO</span></div>
+      <div><b>33/34</b><span>eval questions pass (live in the browser)</span></div>
+      <div><b>8/8</b><span>uncovered questions correctly refused</span></div>
+      <div><b>42/42</b><span>headless-Chrome checks pass, desktop and mobile</span></div>
+      <div><b>100/100/100/100</b><span>Lighthouse mobile: Perf / A11y / Best pr. / SEO</span></div>
     </div>
-    <p class="muted small">The one failure is left visible on purpose. "I clicked a phishing link, who do I tell?" gets refused, because "clicked", "link" and "tell" don't appear in the handbook, so keyword retrieval can't connect them to the security section. It errs on the side of "I don't know" rather than guessing, which is the behaviour we wanted, but it's still a miss. Embeddings or an LLM query rewrite would fix this kind of paraphrase in a client build. The eval questions were written alongside the handbook, so treat the score as a regression check, not an independent benchmark. Lighthouse desktop: {{LH_D}}.</p>
+    <p class="muted small">The one failure is left visible on purpose. "I clicked a phishing link, who do I tell?" gets refused, because "clicked", "link" and "tell" don't appear in the handbook, so keyword retrieval can't connect them to the security section. It errs on the side of "I don't know" rather than guessing, which is the behaviour we wanted, but it's still a miss. Embeddings or an LLM query rewrite would fix this kind of paraphrase in a client build. The eval questions were written alongside the handbook, so treat the score as a regression check, not an independent benchmark. Lighthouse desktop: 100/100/100/100.</p>
   </section>
   <section>
     <h2>Stack</h2>

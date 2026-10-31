@@ -5,7 +5,7 @@
 .cs section{padding:14px 0;border-bottom:1px solid var(--line)}.cs section:last-of-type{border-bottom:0}
 .cs h2{font-size:20px;margin:0 0 8px;color:var(--teal)}
 .cs .nums{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:10px 0}
-.cs .nums div{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px}.cs .nums b{display:block;font-size:24px}.cs .nums span{font-size:12px;color:var(--muted)}
+.cs .nums div{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px}.cs .nums b{display:block;font-size:22px;word-break:break-word}.cs .nums span{font-size:12px;color:var(--muted)}
 .cs .shot{width:100%;border:1px solid var(--line);border-radius:12px;display:block;margin:10px 0}
 @media (max-width:640px){.cs .nums{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media print{body{background:#fff;color:#111}header.top,footer{display:none}.cs h2{color:#0a7}.cs .nums div{background:#f4f6fb}}
