@@ -3,7 +3,7 @@
   company: 'Brightmoor Labs', version: 'v3.2 (fictional)', updated: '2026-10-01',
   sections: [
     { id: 'welcome', title: '1. Welcome and how to use this handbook', paras: [
-      'Brightmoor Labs is a 60-person software company that builds scheduling tools for clinics. This handbook explains how we work, what we offer and what we expect.',
+      'Brightmoor Labs is a 60-person software company that builds booking tools for salons and spas. This handbook explains how we work, what we offer and what we expect.',
       'If a policy here conflicts with your employment contract, your contract wins. Questions about this handbook go to the People team at people@brightmoor.example.' ] },
     { id: 'hours', title: '2. Working hours and core hours', paras: [
       'A full-time week is 38 hours. You choose when to work, but everyone is expected to be available during core hours, 11:00 to 15:00 in your home time zone, Monday to Friday.',
@@ -48,7 +48,7 @@
       'Report suspected phishing, a lost or stolen laptop, or any security incident to security@brightmoor.example within 1 hour of noticing it. Reporting quickly matters more than being sure.',
       'Lock your screen whenever you leave your device. Never share passwords, even with colleagues or IT.' ] },
     { id: 'privacy', title: '13. Customer data and privacy', paras: [
-      'Customer data, including patient appointment data from clinics, must stay in approved company systems. Never copy customer data to personal devices, personal email or unapproved AI tools.',
+      'Customer data, including client appointment data from salons and spas, must stay in approved company systems. Never copy customer data to personal devices, personal email or unapproved AI tools.',
       'Only access customer data when you need it for your work, for example to fix a support ticket. Access is logged and reviewed every quarter.' ] },
     { id: 'conduct', title: '14. Code of conduct and reporting concerns', paras: [
       'We expect everyone to treat colleagues, customers and partners with respect. Harassment, discrimination and bullying are not tolerated.',
