@@ -1,0 +1,17 @@
+.sendgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+.sendgrid .btn{margin:0;text-align:left;white-space:normal;font-size:13px}
+.btn.danger{border-color:rgba(248,113,113,.5);color:#fca5a5}
+.ok{color:#34d399}.bad{color:#f87171}.warn{color:#fbbf24}
+.wrap-ok{white-space:normal}
+.tg{background:#17212b;border:1px solid #2b3945;border-radius:12px;padding:10px 12px;margin-bottom:10px;font-size:14px;line-height:1.45;overflow-wrap:anywhere}
+.tghead{font-size:12px;color:#8ab4d8;margin-bottom:6px;font-weight:600}
+.fakelink{color:#6ab3f3;text-decoration:underline}
+pre.wire{background:#060914;border:1px solid var(--line);border-radius:10px;padding:12px;font-size:12px;max-height:340px;overflow:auto;white-space:pre-wrap;word-break:break-all}
+.kpi .stat{font-size:24px}
+.anom{border-left:3px solid var(--line);padding:6px 10px;margin:8px 0;background:rgba(255,255,255,.02);border-radius:6px}
+.anom.sev-high{border-color:#f87171}.anom.sev-medium{border-color:#fbbf24}.anom.sev-low{border-color:#60a5fa}
+.sev{font-size:11px;text-transform:uppercase;letter-spacing:.05em;padding:1px 6px;border-radius:999px;background:rgba(255,255,255,.08)}
+.todo li{margin:6px 0}.todo input{margin-right:6px}
+img.chart{width:100%;height:auto;border-radius:10px;border:1px solid var(--line);background:#fff;margin-top:10px}
+@media (max-width:640px){.sendgrid{grid-template-columns:1fr}}
+.anom.sev-info{border-color:#60a5fa}

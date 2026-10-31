@@ -11,19 +11,19 @@
 <body>
 <header class="top"><div class="wrap">
   <a class="brand" href="./"><span class="mark">O</span>Oarsman AI</a>
-  <nav class="links"><a href="front-desk/">AI front desk</a><a href="automation/">Automation &amp; scrapers</a></nav>
+  <nav class="links"><a href="front-desk/">AI front desk</a><a href="automation/">Automation &amp; scrapers</a><a href="ai-ops-agent/">AI Ops Agent</a><a href="store-ops/">Store Ops</a></nav>
 </div></header>
 <main class="wrap">
   <div class="hero">
     <h1>Proof you can click, <span class="grad">not just screenshots</span></h1>
-    <p class="lead">Two demo pages for the work Oarsman AI does: AI receptionists for appointment businesses, and n8n automations and web scrapers. Every page says plainly what is real, what is a sample, and what is simulated.</p>
+    <p class="lead">Demo pages for the work Oarsman AI does: AI receptionists, AI lead and ops agents, Shopify store automation, n8n automations and web scrapers. Every page says plainly what is real, what is a sample, and what is simulated.</p>
   </div>
   <section class="grid g2">
     <a class="card" href="front-desk/" style="text-decoration:none;color:inherit">
-      <h2>1. AI front desk demo</h2>
-      <p class="muted">Play a caller at a fictional salon. The booking, FAQ, cancel and escalation logic is the <strong>real engine</strong> from our n8n receptionist kit, running in your browser. The caller's words and the voice part are scripted.</p>
-      <p><span class="tag real">Real engine</span><span class="tag sim">Scripted conversation</span><span class="tag sample">Fictional business</span></p>
-      <span class="btn primary">Try the front desk</span>
+      <h2>1. AI voice receptionist demo</h2>
+      <p class="muted">Talk (or type) as a caller at a fictional salon. Booking, FAQ, cancel and hand-off run on the <strong>real engine</strong> from our n8n receptionist kit, in your browser, with a call record and staff hand-off note. Speech uses your browser's own voice features; the conversation rules are scripted.</p>
+      <p><span class="tag real">Real engine</span><span class="tag sim">Browser voice, scripted rules</span><span class="tag sample">Fictional business</span></p>
+      <span class="btn primary">Talk to the front desk</span>
     </a>
     <a class="card" href="automation/" style="text-decoration:none;color:inherit">
       <h2>2. n8n automation &amp; scrapers</h2>
@@ -32,6 +32,23 @@
       <span class="btn primary">See the outputs</span>
     </a>
   </section>
+  <!-- pieces:ops -->
+  <section class="grid g2">
+    <div class="card">
+      <h2>AI Ops Agent: lead intake, AI scoring, follow-up</h2>
+      <p class="muted">Send a lead to a fictional agency and watch the <strong>real Code nodes</strong> of our 7-workflow n8n kit clean it, score it A/B/C/spam (with the real AI-outage fallback), upsert it to a CRM sheet and follow up until it replies.</p>
+      <p><span class="tag sample">Demo build, no client</span><span class="tag real">Real workflow code</span><span class="tag sim">No AI model called</span></p>
+      <a class="btn primary" href="ai-ops-agent/">Open the demo</a> <a class="btn" href="ai-ops-agent/case-study.html">Case study</a>
+    </div>
+    <div class="card">
+      <h2>Shopify Store Ops Copilot</h2>
+      <p class="muted">Fire signed Shopify webhooks at our n8n order-alert template: forged ones get 401, retries are de-duplicated, real alert text comes out. Then read the weekly exception report for a sample coffee store: leaked codes, refund spikes, loss-making SKUs.</p>
+      <p><span class="tag sample">Demo build, no client</span><span class="tag real">Real template + script output</span><span class="tag sample">Fictional store</span></p>
+      <a class="btn primary" href="store-ops/">Open the demo</a> <a class="btn" href="store-ops/case-study.html">Case study</a>
+    </div>
+  </section>
+  <p class="muted small" style="margin-top:-8px">Voice receptionist case study: <a href="front-desk/case-study.html">read it here</a>.</p>
+<!-- /pieces:ops -->
   <section>
     <div class="honest"><strong>Straight talk.</strong> Oarsman AI is new. There are no client case studies or reviews on these pages because we don't have any to show yet. What you can check is the work itself: the tests, the outputs and the products linked below. AI tools helped write the code and copy, and the receptionist product works with an AI voice platform (Vapi or Retell) that you connect yourself.</div>
   </section>

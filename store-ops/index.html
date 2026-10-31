@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shopify Store Ops Copilot demo: signed order alerts and weekly exception report | Oarsman AI</title>
+<meta name="description" content="Fire signed Shopify webhooks at our n8n order-alert template, watch forged ones get rejected and retries de-duplicated, then read the weekly exception report for a sample coffee store. Runs in your browser. Demo build, no client.">
+<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../"><span class="mark">O</span>Oarsman AI</a>
+  <nav class="links"><a class="on" href="./">Store Ops Copilot</a><a href="case-study.html">Case study</a><a href="../">All demos</a></nav>
+</div></header>
+<main class="wrap">
+  <div class="hero">
+    <p><span class="tag sample">Demo build, no client</span><span class="tag real">Real workflow + script output</span></p>
+    <h1>Shopify Store Ops Copilot: <span class="grad">know about the orders that matter, and what went wrong this week</span></h1>
+    <p class="lead"><strong>Oarsman Coffee Co.</strong> is a made-up online coffee store. Part 1 sends it signed Shopify order webhooks and runs them through our n8n order-alert template: real signature check, real de-duplication, real alert text. Part 2 is the Monday report: what changed, what looks wrong, and which products lose money.</p>
+  </div>
+
+  <section>
+    <div class="honest">
+      <strong>What's real and what isn't on this page</strong>
+      <ul class="clean">
+        <li><span class="tag real">Real</span>The signature check is HMAC-SHA256 of the raw body, compared with the <code>X-Shopify-Hmac-Sha256</code> header, the same way the template's Crypto and IF nodes do it (done here with your browser's WebCrypto). "Skip repeated deliveries" and "Build order alert" are the template's Code nodes, copied unchanged (<code>nodes.js</code>). The weekly report numbers and charts are the actual output of our e-commerce report scripts.</li>
+        <li><span class="tag sim">Simulated</span>Shopify, Telegram and WhatsApp. The signing key is a placeholder made for this page. Nothing is sent anywhere.</li>
+        <li><span class="tag sample">Sample</span>The store, its orders, customers and sales history are fictional test data.</li>
+        <li>No client has used this yet, so there are no client results. AI tools helped write the template, the scripts and this page.</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="tabs views" role="tablist"><button class="on" data-view="v-alerts" type="button">1. Live order alerts</button><button data-view="v-report" type="button">2. Weekly exception report</button></div>
+
+  <div class="view" id="v-alerts">
+    <section class="grid g2">
+      <div class="card">
+        <h2>Send a webhook</h2>
+        <p class="muted small">Each button is Shopify posting an <code>orders/create</code> event. Try the bad ones too.</p>
+        <div class="sendgrid">
+          <button class="btn primary" data-send="cod:valid" type="button">#2041 big COD order, first-time buyer</button>
+          <button class="btn" data-send="cod:valid" type="button">Shopify retries #2041 (same event id)</button>
+          <button class="btn primary" data-send="card:valid" type="button">#2042 small paid order, regular</button>
+          <button class="btn primary" data-send="staff:valid" type="button">#2043 STAFF50 code, 50% off</button>
+          <button class="btn danger" data-send="card:forged" type="button">Forged signature</button>
+          <button class="btn danger" data-send="card:tampered" type="button">Total changed after signing</button>
+          <button class="btn danger" data-send="card:missing" type="button">No signature header</button>
+        </div>
+        <p><button class="btn" id="reset" type="button">Start over</button></p>
+        <p class="small"><b id="counts"></b></p>
+        <div class="table-wrap" id="log"></div>
+      </div>
+      <div class="card">
+        <h2>What the owner gets</h2>
+        <p class="muted small">Alert text exactly as the "Build order alert" node writes it: high-value, cash-on-delivery, first order and discount flags, items, ship-to city and a link to the order in Shopify admin (not clickable here: the store is fictional).</p>
+        <div id="alerts"></div>
+      </div>
+    </section>
+    <section>
+      <h2>Under the hood</h2>
+      <p class="muted small">The last request as n8n received it, and the signature it computed. A webhook is only trusted if the two signatures match; anything else gets HTTP 401 and is never processed.</p>
+      <pre class="wire" id="wire"></pre>
+      <div class="dscroll"><img class="diagram wide" src="wf-order-alerts.svg" alt="Diagram of the Shopify order alerts n8n workflow, generated from the shipped workflow JSON"></div>
+      <p class="muted small">Wide diagram: scroll sideways on a phone.</p>
+    </section>
+  </div>
+
+  <div class="view" id="v-report" hidden>
+    <section>
+      <h2>Week of <span id="week"></span></h2>
+      <div class="grid g3" id="kpis"></div>
+    </section>
+    <section class="grid g2">
+      <div class="card"><h3>Things that look wrong</h3><div id="anoms"></div><p class="muted small" id="quiet"></p></div>
+      <div class="card"><h3>This week's to-do</h3><p class="muted small">Built from the high-severity findings and the profit check.</p><ul class="clean todo" id="actions"></ul>
+        <img class="chart" src="img/daily_anomalies.png" alt="Daily net sales chart with the flagged days marked" loading="lazy"></div>
+    </section>
+    <section>
+      <h3>Which products actually make money</h3>
+      <p class="muted small" id="profit-sum"></p>
+      <div class="table-wrap" id="profit"></div>
+      <div class="grid g2" style="margin-top:12px">
+        <img class="chart" src="img/contribution.png" alt="Contribution by SKU after all costs" loading="lazy">
+        <img class="chart" src="img/platform_mix.png" alt="Sales by platform" loading="lazy">
+      </div>
+    </section>
+  </div>
+
+  <section>
+    <h2>Tested <span class="tag real">from our test reports</span></h2>
+    <div class="grid g3">
+      <div class="card"><div class="stat">11 / 11<small>order-alert template checks on n8n 2.45.6: valid 200, retry 200 with no second alert, forged 401, altered body 401, missing header 401, exact 18-digit order id, HTML escaped, WhatsApp params</small></div></div>
+      <div class="card"><div class="stat">25 / 25<small>checks across our three free n8n templates, run on n8n 2.45.6 with mocked Telegram, WhatsApp and Slack</small></div></div>
+      <div class="card"><div class="stat">33 / 33<small>e-commerce report pack tests: sales totals match the raw exports, every planted problem flagged, nothing flagged in the quiet control week, loss-maker and missing cost caught</small></div></div>
+    </div>
+    <p class="muted small">Not covered: a real Shopify store, Telegram bot or WhatsApp Business account. Those are connected and tested at setup on the client's accounts.</p>
+  </section>
+
+  <section class="grid g2">
+    <div class="card"><h3>Read the case study</h3><p class="muted small">Problem, build, test results and stack on one page.</p><a class="btn primary" href="case-study.html">Case study</a></div>
+    <div class="card"><h3>Get the parts</h3><p class="muted small">The order-alert workflow is in our free n8n templates; the report is one of our skill packs. If you came from a proposal, reply there to have it set up for your store.</p><a class="btn" href="https://vishalrwt.gumroad.com/l/free-n8n-workflows">Free n8n templates</a> <a class="btn" href="https://vishalrwt.gumroad.com/l/claude-skill-packs-bundle">Skill packs</a></div>
+  </section>
+</main>
+<footer><div class="wrap">Oarsman AI · Demo build, no client. AI tools helped write the code and this page. Runs entirely in your browser: no tracking, no cookies, no API keys, nothing sent anywhere. <a href="../">All demos</a></div></footer>
+<script src="data.js"></script>
+<script src="nodes.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

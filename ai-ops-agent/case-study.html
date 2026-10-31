@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Case study: AI Ops Agent for lead intake and follow-up (demo build) | Oarsman AI</title>
+<meta name="description" content="One-page case study: an n8n AI lead pipeline that scores, logs and follows up on every lead, with an AI-outage fallback. Demo build, no client. Real test numbers.">
+<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<style>
+.cs{max-width:860px}.cs h2{margin-top:6px}.cs section{padding:14px 0;border-bottom:1px solid var(--line)}.cs section:last-of-type{border-bottom:0}
+.cs .meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:14px 0}.cs .meta div{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:13px}.cs .meta b{display:block;font-size:12px;color:var(--muted);font-weight:600}
+.cs .results{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.cs .cover{width:100%;height:auto;border-radius:14px;border:1px solid var(--line);display:block}
+@media (max-width:700px){.cs .meta{grid-template-columns:repeat(2,minmax(0,1fr))}.cs .results{grid-template-columns:minmax(0,1fr)}}
+@media print{header.top,footer{display:none}body{background:#fff;color:#111}.card,.cs .meta div{background:#fff}.muted{color:#444}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../"><span class="mark">O</span>Oarsman AI</a>
+  <nav class="links"><a href="./">Live demo</a><a class="on" href="case-study.html">Case study</a><a href="../">All demos</a></nav>
+</div></header>
+<main class="wrap cs">
+  <div class="hero" style="padding-bottom:6px">
+    <p><span class="tag sample">Demo build, no client</span><span class="tag real">Real test numbers</span></p>
+    <h1>AI Ops Agent: <span class="grad">no lead left unanswered</span></h1>
+    <p class="lead">An n8n pipeline that answers, scores, logs and follows up on every inbound lead, and keeps working when the AI provider is down.</p>
+  </div>
+  <img class="cover" src="cover.png" alt="AI Ops Agent cover: lead scored A 86, follow-ups scheduled, workflow diagram" width="1000" height="750">
+  <div class="meta">
+    <div><b>Type</b>Productised build (our own kit)</div>
+    <div><b>Client</b>None yet: demo build</div>
+    <div><b>Platform</b>n8n (self-hosted or Cloud)</div>
+    <div><b>Live demo</b><a href="./">Try it in your browser</a></div>
+  </div>
+
+  <section>
+    <h2>Problem</h2>
+    <p>Service businesses lose leads in the gap between the form and a human. Enquiries sit unread, hot leads get the same slow reply as tyre-kickers, and follow-ups depend on someone remembering. Most "AI lead scoring" templates add a second failure point: if the AI call times out or returns bad JSON, the lead is dropped.</p>
+  </section>
+
+  <section>
+    <h2>What we built</h2>
+    <ul class="clean">
+      <li><strong>Intake from any form</strong> (Typeform, Tally, Webflow, WordPress, raw JSON): one webhook maps common field names to one schema, validates the email and catches honeypot spam.</li>
+      <li><strong>AI scoring with a strict JSON contract</strong>: score 0–100, need, urgency, budget band, tier A/B/C or spam. The lead text is treated as untrusted data, and every field of the reply is checked.</li>
+      <li><strong>Rule-based fallback</strong> when the AI is down or replies badly, so a lead is never lost.</li>
+      <li><strong>CRM sheet with no duplicates</strong> (upsert by email), an instant reply plus Slack and email alerts for A-tier leads.</li>
+      <li><strong>Follow-ups that stop themselves</strong> on reply, booking, STOP or when an owner is assigned, plus a daily pipeline report, monthly re-engagement and error alerts with a link to the failed run.</li>
+    </ul>
+    <p class="muted small">7 workflows, 57 core n8n nodes, no community nodes and no credentials in the files.</p>
+  </section>
+
+  <section>
+    <h2>Result (tests, not client outcomes)</h2>
+    <div class="results">
+      <div class="card"><div class="stat">7 / 7<small>workflows executed on n8n 2.44.6 against mock services, exit 0, no workflow errors</small></div></div>
+      <div class="card"><div class="stat">7 / 7<small>live HTTP webhook checks (hot lead, other field names, invalid email 400, honeypot, form-encoded, CORS, test sender)</small></div></div>
+      <div class="card"><div class="stat">A 86 · B 63 · C 15<small>fallback scores of the 4 test leads with the AI provider down, plus spam caught. The browser demo reproduces the same numbers</small></div></div>
+    </div>
+    <p class="muted small">Source: Lead Autopilot v1.1 test report, 26 Oct 2026. Not covered: real Google, SMTP, IMAP, Slack and LLM accounts, and scoring quality with a real model. There are no client results yet.</p>
+  </section>
+
+  <section>
+    <h2>Stack</h2>
+    <p><span class="tag real">n8n</span><span class="tag real">JavaScript Code nodes</span><span class="tag real">OpenAI-compatible LLM API</span><span class="tag real">Google Sheets</span><span class="tag real">Slack Block Kit</span><span class="tag real">SMTP / IMAP</span><span class="tag real">Webhooks</span></p>
+    <p class="muted small">Works with OpenAI, Azure OpenAI, OpenRouter, Groq, Mistral, DeepSeek or a local Ollama model through one base-URL setting.</p>
+  </section>
+
+  <section>
+    <h2>Honest notes</h2>
+    <ul class="clean small">
+      <li>This is our own product turned into a demo, not client work. The business in the demo (Acme Growth Studio) and its leads are fictional.</li>
+      <li>The live demo runs the workflows' real JavaScript in the browser. It does not call an AI model; it shows the outage fallback, or a hand-written example reply you can edit.</li>
+      <li>AI tools helped write the code and this page. Every number above comes from our own test report.</li>
+    </ul>
+    <p><a class="btn primary" href="./">Open the live demo</a><a class="btn" href="https://vishalrwt.gumroad.com/l/n8n-lead-autopilot">Lead Autopilot kit</a></p>
+  </section>
+</main>
+<footer><div class="wrap">Oarsman AI · Case study for a demo build. No tracking, no cookies. <a href="../">All demos</a></div></footer>
+</body>
+</html>

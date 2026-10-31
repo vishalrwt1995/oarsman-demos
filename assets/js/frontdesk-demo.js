@@ -56,6 +56,7 @@
     applyWrites(r.writes);
     showWire(body, response, r.writes);
     const first = r.results[0] || {};
+    document.dispatchEvent(new CustomEvent('fd:tool', { detail: { tool: name, args, caller, result: first.error ? 'ERROR: ' + first.error : first.result } }));
     return first.error ? 'ERROR: ' + first.error : first.result;
   }
   function applyWrites(w) {
@@ -72,6 +73,7 @@
     const el = document.createElement('div'); el.className = 'msg ' + who;
     el.innerHTML = (who === 'sys' ? '' : '<span class="who">' + (who === 'caller' ? 'Caller (you, ' + fmtPhone(caller) + ')' : 'Front desk (scripted wording)') + '</span>') + esc(text);
     $('#chat').appendChild(el); $('#chat').scrollTop = $('#chat').scrollHeight;
+    document.dispatchEvent(new CustomEvent('fd:say', { detail: { who, text } }));
   }
   function fmtPhone(p) { return p === ME ? '+1 555 0142' : '+1 555 0199'; }
   function choices(list) {
@@ -133,6 +135,7 @@
       const starts = [...res.matchAll(/\[(\d)\] ([^(]+) \(start=([^)]+)\)/g)];
       $('#chat').lastChild.textContent = '';
       $('#chat').lastChild.innerHTML = '<span class="who">Front desk (scripted wording)</span>' + esc(((res.match(/Nothing free on [^.]*\./) || [''])[0] ? (res.match(/Nothing free on [^.]*\./)[0].replace('Nothing free on', "We're fully booked or closed on") + ' ') : '') + 'I have ' + starts.map((s) => s[2].trim()).join(', or ') + '. Which works for you?');
+      document.dispatchEvent(new CustomEvent('fd:say', { detail: { who: 'desk', text: $('#chat').lastChild.textContent.replace(/^Front desk \(scripted wording\)/, '') } }));
       choices(starts.map((s) => [s[2].trim(), () => {
         say('caller', 'The ' + s[2].trim().replace(/^\w+ /, '') + ' one, please.');
         say('desk', 'Great. Can I have your name?');
@@ -156,11 +159,13 @@
   }
   function setCaller(p) {
     caller = p;
+    document.dispatchEvent(new CustomEvent('fd:newcall', { detail: { caller: p } }));
     document.querySelectorAll('#caller-pick button').forEach((b) => b.classList.toggle('on', b.dataset.p === p));
     say('sys', 'New call from ' + fmtPhone(p) + (p === OTHER ? ' (a different person: try "Cancel my booking" to see the safety check)' : ''));
   }
   function start() {
     state = seed(); callN = 0; caller = ME; $('#chat').innerHTML = '';
+    document.dispatchEvent(new CustomEvent('fd:start', { detail: { caller: ME } }));
     const now = DT.now().setZone(TZ);
     $('#clock').textContent = now.toFormat("cccc d LLLL, h:mm a") + ' in New York (the demo salon\'s time zone)';
     say('sys', 'Call connected from +1 555 0142. Engine is running in your browser.');
@@ -169,11 +174,13 @@
     $('#wire-req').textContent = '(make a choice to see the request)'; $('#wire-res').textContent = ''; $('#wire-writes').textContent = '';
     renderSheet(); menu();
   }
+  // Hooks for the voice layer (front-desk/voice.js): same engine, same turns, just another way in.
+  window.FD = { turn, book, menu, say, choices, ME, OTHER, fmtPhone, TZ, getState: () => state, getCaller: () => caller };
   window.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('#sheet-tabs button').forEach((b) => { b.onclick = () => { tab = b.dataset.tab; renderSheet(); }; });
     document.querySelectorAll('#caller-pick button').forEach((b) => { b.onclick = () => setCaller(b.dataset.p); });
     $('#reset').onclick = start;
-    $('#free-form').onsubmit = (e) => { e.preventDefault(); const q = $('#free-q').value.trim(); if (!q) return; $('#free-q').value = ''; turn(q, 'answer_faq', { question: q }); };
+    $('#free-form').onsubmit = (e) => { e.preventDefault(); const q = $('#free-q').value.trim(); if (!q) return; $('#free-q').value = ''; if (window.FD_ROUTE) window.FD_ROUTE(q, 'typed'); else turn(q, 'answer_faq', { question: q }); };
     start();
   });
 })();

@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Ops Agent demo: lead intake, AI scoring and follow-up in n8n | Oarsman AI</title>
+<meta name="description" content="Send a lead and watch the real Code nodes of our n8n Lead Autopilot workflows score it, upsert it to a CRM sheet, alert you and schedule follow-ups. Runs in your browser. Demo build, no client.">
+<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../"><span class="mark">O</span>Oarsman AI</a>
+  <nav class="links"><a class="on" href="./">AI Ops Agent</a><a href="case-study.html">Case study</a><a href="../">All demos</a></nav>
+</div></header>
+<main class="wrap">
+  <div class="hero">
+    <p><span class="tag sample">Demo build, no client</span><span class="tag real">Real workflow code</span></p>
+    <h1>AI Ops Agent: <span class="grad">every lead answered, scored and followed up</span></h1>
+    <p class="lead">Send an enquiry to <strong>Acme Growth Studio</strong>, a made-up marketing agency. Each step below is the real JavaScript from our 7-workflow n8n kit, running in your browser and wired the same way the n8n workflows are. Watch the lead get cleaned up, scored A/B/C/spam, saved to the CRM sheet with no duplicates, and followed up until it replies.</p>
+  </div>
+
+  <section>
+    <div class="honest">
+      <strong>What's real and what isn't on this page</strong>
+      <ul class="clean">
+        <li><span class="tag real">Real</span>The logic. Field mapping and validation, the exact AI prompt with its strict JSON contract, the parsing and checking of the model's reply, the rule-based fallback scorer, tiering, the follow-up cadence, reply/STOP detection, the daily report and the error alert all come from the Code nodes in Lead Autopilot v1.1 and are copied unchanged (<code>nodes.js</code>).</li>
+        <li><span class="tag sim">Simulated</span>No AI model is called and no key is used. By default the "AI provider" is unreachable, so you see the workflow's real outage path: the rule-based scorer. You can also paste a hand-written example of a model reply to see how the contract is checked. Google Sheets, Slack and email are simulated in the page. Nothing is sent anywhere.</li>
+        <li><span class="tag sample">Sample</span>The agency, the people and the companies are fictional, and the email addresses use example domains.</li>
+        <li>No client has used this yet, so there are no client results. AI tools helped write the kit's code and this page.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="grid g2">
+    <div class="card">
+      <h2>1. Send a lead</h2>
+      <p><button class="btn primary" id="samples" type="button">Send the 5 built-in test leads</button><button class="btn" id="reset" type="button">Start over</button></p>
+      <p class="muted small" id="batch"></p>
+      <form id="lead-form" class="form-grid" autocomplete="off">
+        <label>Name<input name="name" value="Dana Ruiz"></label>
+        <label>Work email<input name="email" value="dana@fieldnote-apparel.example"></label>
+        <label>Company<input name="company" value="Fieldnote Apparel"></label>
+        <label>Budget<input name="budget" value="$4,000/month"></label>
+        <label class="full">Service<input name="service" value="Paid ads management"></label>
+        <label class="full">Message<textarea name="message">We are a 25-person DTC apparel brand. Our Meta ads stopped scaling and we need help ASAP, we launch a winter range next month.</textarea></label>
+        <label class="full">AI step
+          <select id="ai-mode"><option value="down">AI provider unreachable → real rule-based fallback</option><option value="example">Use a hand-written example model reply</option></select>
+        </label>
+        <div class="full" id="example-wrap" hidden style="grid-column:1/-1"><textarea class="code" id="example-reply" aria-label="Example model reply JSON"></textarea><p class="muted small">Edit it: try a score of 140, an urgency of "whenever" or broken JSON, and see what the parser does.</p></div>
+        <div style="grid-column:1/-1"><button class="btn primary" type="submit">Send this lead</button></div>
+      </form>
+      <details style="margin-top:10px"><summary class="small">Or post raw webhook JSON (any form builder's field names)</summary>
+        <textarea class="code" id="raw" aria-label="Raw webhook JSON">{"first_name":"Lena","last_name":"Okafor","your-email":"lena@tidepool-saas.example","comments":"B2B SaaS, 60 people. Demo page converts at 0.9%, need a CRO audit this quarter. Budget around 3k.","utm_source":"linkedin"}</textarea>
+        <p><button class="btn" id="raw-send" type="button">Post raw JSON</button></p>
+      </details>
+      <div class="resp" id="resp" aria-live="polite"></div>
+    </div>
+    <div class="card">
+      <h2>2. What ran, node by node</h2>
+      <p class="muted small">Workflow 01 · click a step to see its exact output.</p>
+      <div id="trace" class="scrollbox"></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>3. The CRM sheet <span class="tag sim">in your browser</span></h2>
+    <p id="stats"></p>
+    <div class="table-wrap" id="sheet"></div>
+    <p class="muted small">In the kit this is the owner's Google Sheet, upserted by email, so a repeat enquiry updates the row instead of adding a second one. Send the same lead twice to check.</p>
+  </section>
+
+  <section class="card">
+    <h2>4. Let time pass</h2>
+    <p class="muted small" id="clock"></p>
+    <div class="row-actions">
+      <button class="btn" data-adv="1" type="button">+1 hour</button><button class="btn" data-adv="24" type="button">+1 day</button><button class="btn" data-adv="48" type="button">+2 days</button>
+      <button class="btn" id="do-report" type="button">Run daily report</button><button class="btn" id="do-break" type="button">Break the Sheets connection</button>
+    </div>
+    <div class="row-actions" style="margin-top:8px">
+      <select id="reply-lead" aria-label="Lead that replies"></select>
+      <select id="reply-text" aria-label="Reply text"><option>Thanks! Tuesday at 3pm works for a call.</option><option>STOP</option></select>
+      <button class="btn" id="do-reply" type="button">Lead replies</button>
+    </div>
+    <p class="small" id="timemsg" aria-live="polite"></p>
+  </section>
+
+  <section class="grid g2">
+    <div class="card"><h2>Slack <span class="tag sim">simulated</span></h2><div id="slack" class="scrollbox"></div></div>
+    <div class="card"><h2>Email outbox <span class="tag sim">simulated</span></h2><div id="outbox" class="scrollbox"></div></div>
+  </section>
+
+  <section>
+    <h2>How it's wired <span class="tag real">drawn from the real workflow files</span></h2>
+    <div class="tabs wf-tabs"><button class="on" data-src="wf-01-intake.svg" type="button">01 Intake + AI scoring</button><button data-src="wf-02-followups.svg" type="button">02 Follow-ups</button><button data-src="wf-03-replies.svg" type="button">03 Reply detector</button></div>
+    <div class="dscroll"><img class="diagram wide" id="wf-img" src="wf-01-intake.svg" alt="Diagram of the n8n workflow, generated from the shipped workflow JSON"></div>
+    <p class="muted small">Wide diagram: scroll sideways on a phone. Seven workflows in total: intake, follow-ups, replies, daily report, monthly re-engagement, error alerts and a test-lead sender.</p>
+  </section>
+
+  <section>
+    <h2>Tested <span class="tag real">from the kit's test report (26 Oct 2026)</span></h2>
+    <div class="grid g3">
+      <div class="card"><div class="stat">7 / 7<small>workflows imported and executed on n8n 2.44.6 with mock services, exit 0, no workflow errors (57 nodes)</small></div></div>
+      <div class="card"><div class="stat">7 / 7<small>live HTTP webhook checks: hot lead, other field names, invalid email (400), honeypot (spam), form-encoded post, CORS preflight, test-lead sender</small></div></div>
+      <div class="card"><div class="stat">0 leads lost<small>with the AI provider down: the fallback scored all 4 test leads (A 86 / B 63 / C 15 / spam)</small></div></div>
+    </div>
+    <p class="muted small">Not covered by those tests: real Google, SMTP, IMAP, Slack and LLM accounts, or scoring quality with a real model. Those depend on the buyer's accounts and are checked at setup.</p>
+  </section>
+
+  <section class="grid g2">
+    <div class="card"><h3>Read the case study</h3><p class="muted small">Problem, build, test results and stack on one page.</p><a class="btn primary" href="case-study.html">Case study</a></div>
+    <div class="card"><h3>Get the kit, or have it built</h3><p class="muted small">Lead Autopilot is sold as a self-serve n8n kit. If you came from a proposal, reply there to have it set up on your own accounts.</p><a class="btn" href="https://vishalrwt.gumroad.com/l/n8n-lead-autopilot">Lead Autopilot on Gumroad</a></div>
+  </section>
+</main>
+<footer><div class="wrap">Oarsman AI · Demo build, no client. AI tools helped write the code and this page. Runs entirely in your browser: no tracking, no cookies, no API keys, nothing sent anywhere. <a href="../">All demos</a></div></footer>
+<script src="nodes.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

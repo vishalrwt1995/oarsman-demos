@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Case study: Shopify Store Ops Copilot, signed order alerts and weekly exception report (demo build) | Oarsman AI</title>
+<meta name="description" content="One-page case study: verified Shopify order alerts in n8n plus a weekly sales, anomaly and profit report. Demo build, no client. Real test numbers.">
+<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<style>
+.cs{max-width:860px}.cs h2{margin-top:6px}.cs section{padding:14px 0;border-bottom:1px solid var(--line)}.cs section:last-of-type{border-bottom:0}
+.cs .meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:14px 0}.cs .meta div{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:13px}.cs .meta b{display:block;font-size:12px;color:var(--muted);font-weight:600}
+.cs .results{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.cs .cover{width:100%;height:auto;border-radius:14px;border:1px solid var(--line);display:block}
+@media (max-width:700px){.cs .meta{grid-template-columns:repeat(2,minmax(0,1fr))}.cs .results{grid-template-columns:minmax(0,1fr)}}
+@media print{header.top,footer{display:none}body{background:#fff;color:#111}.card,.cs .meta div{background:#fff}.muted{color:#444}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../"><span class="mark">O</span>Oarsman AI</a>
+  <nav class="links"><a href="./">Live demo</a><a class="on" href="case-study.html">Case study</a><a href="../">All demos</a></nav>
+</div></header>
+<main class="wrap cs">
+  <div class="hero" style="padding-bottom:6px">
+    <p><span class="tag sample">Demo build, no client</span><span class="tag real">Real test numbers</span></p>
+    <h1>Shopify Store Ops Copilot: <span class="grad">the orders that matter, and the problems you'd miss</span></h1>
+    <p class="lead">Instant, verified alerts for the orders worth a look, and a Monday report that finds leaked discount codes, refund spikes, stalled products and money-losing SKUs.</p>
+  </div>
+  <img class="cover" src="cover.png" alt="Store Ops Copilot cover: order alert, rejected forged webhook, weekly exception report" width="1000" height="750">
+  <div class="meta">
+    <div><b>Type</b>Productised build (our own template + skill pack)</div>
+    <div><b>Client</b>None yet: demo build</div>
+    <div><b>Platform</b>n8n + Python scripts</div>
+    <div><b>Live demo</b><a href="./">Try it in your browser</a></div>
+  </div>
+
+  <section>
+    <h2>Problem</h2>
+    <p>Small Shopify stores find out about trouble late. A big cash-on-delivery order from a first-time buyer looks like every other order in the admin. A staff discount code leaks to a coupon site and nobody notices for a week. One product quietly loses money once platform fees and shipping are counted. And many webhook automations trust any request that hits their URL, so a forged "order" can trigger real actions.</p>
+  </section>
+
+  <section>
+    <h2>What we built</h2>
+    <ul class="clean">
+      <li><strong>Verified order alerts</strong> (n8n): every webhook is checked with HMAC-SHA256 against Shopify's signature before anything runs. Forged, altered or unsigned requests get HTTP 401.</li>
+      <li><strong>No double alerts</strong>: Shopify retries until it gets a 2xx; the workflow remembers recent event ids and skips repeats.</li>
+      <li><strong>Alerts worth reading</strong> on Telegram and WhatsApp: high-value, cash-on-delivery, first-order and discount flags, items, ship-to and a direct admin link that keeps Shopify's 18-digit order id exact. Customer text is HTML-escaped.</li>
+      <li><strong>Weekly exception report</strong> (Python skill pack) across Shopify, WooCommerce and Amazon exports: KPIs vs last week and the 4-week average, anomaly detection with what to check, and per-SKU profit after COGS, packaging, fees and fulfilment.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Result (tests, not client outcomes)</h2>
+    <div class="results">
+      <div class="card"><div class="stat">11 / 11<small>order-alert checks on n8n 2.45.6, including forged 401, altered body 401, missing header 401 and retry de-duplicated</small></div></div>
+      <div class="card"><div class="stat">33 / 33<small>report pack checks: totals match the raw exports, every planted problem flagged, 0 anomalies in the quiet control week</small></div></div>
+      <div class="card"><div class="stat">4 / 4<small>planted problems found in the sample week: leaked STAFF50 code (28 orders), refund spike, stalled SKU, sales spike. Also 1 loss-making and 1 missing-cost SKU caught</small></div></div>
+    </div>
+    <p class="muted small">Sources: n8n templates test report (30 Oct 2026, 25/25 overall) and the e-commerce pack's test record (31 Oct 2026). Sample data is a fictional coffee store. Not covered: a real Shopify store, Telegram bot or WhatsApp Business account. There are no client results yet.</p>
+  </section>
+
+  <section>
+    <h2>Stack</h2>
+    <p><span class="tag real">n8n</span><span class="tag real">Shopify webhooks</span><span class="tag real">HMAC-SHA256</span><span class="tag real">Telegram Bot API</span><span class="tag real">WhatsApp Cloud API</span><span class="tag real">Python + pandas</span><span class="tag real">matplotlib</span></p>
+  </section>
+
+  <section>
+    <h2>Honest notes</h2>
+    <ul class="clean small">
+      <li>This is our own template and skill pack turned into a demo, not client work. Oarsman Coffee Co., its orders and its sales history are fictional.</li>
+      <li>The live demo runs the template's real Code nodes and a real HMAC check in the browser with a placeholder key. The report section shows the pack's actual output on its sample data. No AI model is called on the page.</li>
+      <li>AI tools helped write the code and this page. Every number above comes from our own test reports.</li>
+    </ul>
+    <p><a class="btn primary" href="./">Open the live demo</a><a class="btn" href="https://vishalrwt.gumroad.com/l/free-n8n-workflows">Free n8n templates</a></p>
+  </section>
+</main>
+<footer><div class="wrap">Oarsman AI · Case study for a demo build. No tracking, no cookies. <a href="../">All demos</a></div></footer>
+</body>
+</html>

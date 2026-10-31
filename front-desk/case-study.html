@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Case study: AI voice receptionist that books, answers and hands off (demo build) | Oarsman AI</title>
+<meta name="description" content="One-page case study: an n8n backend for a Vapi or Retell voice receptionist with safe booking, FAQ, cancel and human hand-off. Demo build, no client. Real test numbers.">
+<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<style>
+.cs{max-width:860px}.cs h2{margin-top:6px}.cs section{padding:14px 0;border-bottom:1px solid var(--line)}.cs section:last-of-type{border-bottom:0}
+.cs .meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:14px 0}.cs .meta div{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:13px}.cs .meta b{display:block;font-size:12px;color:var(--muted);font-weight:600}
+.cs .results{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.cs .cover{width:100%;height:auto;border-radius:14px;border:1px solid var(--line);display:block}
+@media (max-width:700px){.cs .meta{grid-template-columns:repeat(2,minmax(0,1fr))}.cs .results{grid-template-columns:minmax(0,1fr)}}
+@media print{header.top,footer{display:none}body{background:#fff;color:#111}.card,.cs .meta div{background:#fff}.muted{color:#444}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../"><span class="mark">O</span>Oarsman AI</a>
+  <nav class="links"><a href="./">Live demo</a><a class="on" href="case-study.html">Case study</a><a href="../">All demos</a></nav>
+</div></header>
+<main class="wrap cs">
+  <div class="hero" style="padding-bottom:6px">
+    <p><span class="tag sample">Demo build, no client</span><span class="tag real">Real test numbers</span></p>
+    <h1>AI Voice Receptionist: <span class="grad">books safely, never guesses, hands off cleanly</span></h1>
+    <p class="lead">The booking brain behind a phone receptionist: real availability, no double-booking, FAQ answers only from the owner's list, and a clear hand-off note when a person needs to step in.</p>
+  </div>
+  <img class="cover" src="cover.png" alt="AI Voice Receptionist cover: a call booking a haircut, test numbers" width="1000" height="750">
+  <div class="meta">
+    <div><b>Type</b>Productised build (our own kit)</div>
+    <div><b>Client</b>None yet: demo build</div>
+    <div><b>Platform</b>n8n + Vapi or Retell</div>
+    <div><b>Live demo</b><a href="./">Talk to it in your browser</a></div>
+  </div>
+
+  <section>
+    <h2>Problem</h2>
+    <p>Salons, clinics and trades miss calls while they work. A voice AI can pick up, but the risky part is what happens behind it: booking a slot that is already taken, inventing an answer about prices or policies, letting anyone cancel anyone's appointment, or ending an urgent call without telling a human.</p>
+  </section>
+
+  <section>
+    <h2>What we built</h2>
+    <ul class="clean">
+      <li><strong>Six tools for the voice AI</strong> (check availability, book, cancel, answer FAQ, take message, escalate), served by one n8n webhook that reads and writes the owner's Google Sheet.</li>
+      <li><strong>Safe booking</strong>: opening hours, buffers, minimum notice, blocked times and a re-check at booking time, so a slot taken mid-call is refused with the nearest alternatives. Retried tool calls return the same booking, not a duplicate.</li>
+      <li><strong>No guessing</strong>: answers only from the owner's FAQ; anything else is logged to FAQ_Gaps and offered as a message.</li>
+      <li><strong>Caller checks and hand-off</strong>: only the number that booked can cancel; "talk to a person" transfers during staffed hours, otherwise takes an urgent message and alerts the owner.</li>
+      <li><strong>After the call</strong>: call log with outcome, daily report, Google Calendar mirror and error alerts.</li>
+      <li><strong>New in this demo</strong>: talk to it with your browser's speech recognition (typing works the same), hear replies, and see the call record and staff hand-off note each call produces.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Result (tests, not client outcomes)</h2>
+    <div class="results">
+      <div class="card"><div class="stat">38 / 38<small>unit tests: booking engine, parsing, FAQ, escalation, reports, workflow checks</small></div></div>
+      <div class="card"><div class="stat">26 + 12<small>end-to-end tests on n8n 2.44.6 (live webhooks + scheduled workflows), all passing, with Google, Slack and email mocked</small></div></div>
+      <div class="card"><div class="stat">7 / 7<small>tool paths correct on n8n Cloud with a real Google Sheet and Calendar (27 Oct 2026), about 1.7 to 5.7 s per call</small></div></div>
+    </div>
+    <p class="muted small">Also: the Vapi setup script passed 10/10 tests against a fake Vapi API. Not tested yet: a real phone call (voice quality, speech recognition on a phone line, how well the AI model follows the prompt), because that needs a paid voice-platform account. There are no client results yet.</p>
+  </section>
+
+  <section>
+    <h2>Stack</h2>
+    <p><span class="tag real">n8n</span><span class="tag real">Vapi / Retell tool calls</span><span class="tag real">Google Sheets</span><span class="tag real">Google Calendar</span><span class="tag real">Slack + email alerts</span><span class="tag real">Luxon (time zones)</span><span class="tag sim">Web Speech API (demo only)</span></p>
+  </section>
+
+  <section>
+    <h2>Honest notes</h2>
+    <ul class="clean small">
+      <li>This is our own kit turned into a demo, not client work. Maple Street Salon, its prices and its callers are fictional, with 555 phone numbers.</li>
+      <li>The demo runs the kit's real booking engine in the browser. Understanding the caller is done by simple keyword rules written for the demo; in production the voice AI on Vapi or Retell picks the tool. Speech uses your browser's own recognition and voice; no AI model or paid API is called.</li>
+      <li>AI tools helped write the code and this page. Every number above comes from our own test reports.</li>
+    </ul>
+    <p><a class="btn primary" href="./">Open the live demo</a><a class="btn" href="https://vishalrwt.gumroad.com/l/obpxq">AI Front Desk kit</a></p>
+  </section>
+</main>
+<footer><div class="wrap">Oarsman AI · Case study for a demo build. No tracking, no cookies. <a href="../">All demos</a></div></footer>
+</body>
+</html>

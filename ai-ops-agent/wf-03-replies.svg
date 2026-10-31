@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1275 274" role="img" aria-label="Lead Autopilot workflow 03: reply detector" font-family="Inter,system-ui,sans-serif">
+<title>Lead Autopilot workflow 03: reply detector</title><rect width="100%" height="100%" fill="#0b1020" rx="12"/>
+<path d="M210,137 C220,137 220,137 229,137" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M419,137 C428,137 428,137 438,137" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M628,137 C638,137 638,137 647,137" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M837,137 C846,137 846,47 856,47" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M837,137 C846,137 846,227 856,227" stroke="#4b5578" stroke-width="2" fill="none"/>
+<path d="M1046,47 C1056,47 1056,47 1065,47" stroke="#4b5578" stroke-width="2" fill="none"/>
+<g><rect x="20" y="110" width="190" height="54" rx="9" fill="#141a2e" stroke="#f472b6" stroke-width="2"/><rect x="20" y="110" width="6" height="54" rx="3" fill="#f472b6"/><text x="36" y="133" fill="#e6e9fb" font-size="13" font-weight="600">New email (IMAP)</text><text x="36" y="151" fill="#9aa3c7" font-size="11">EmailReadImap</text></g>
+<g><rect x="229" y="110" width="190" height="54" rx="9" fill="#141a2e" stroke="#9aa3c7" stroke-width="2"/><rect x="229" y="110" width="6" height="54" rx="3" fill="#9aa3c7"/><text x="245" y="133" fill="#e6e9fb" font-size="13" font-weight="600">Config</text><text x="245" y="151" fill="#9aa3c7" font-size="11">Set</text></g>
+<g><rect x="438" y="110" width="190" height="54" rx="9" fill="#141a2e" stroke="#60a5fa" stroke-width="2"/><rect x="438" y="110" width="6" height="54" rx="3" fill="#60a5fa"/><text x="454" y="133" fill="#e6e9fb" font-size="13" font-weight="600">Read leads</text><text x="454" y="151" fill="#9aa3c7" font-size="11">Google Sheets</text></g>
+<g><rect x="647" y="110" width="190" height="54" rx="9" fill="#141a2e" stroke="#a78bfa" stroke-width="2"/><rect x="647" y="110" width="6" height="54" rx="3" fill="#a78bfa"/><text x="663" y="133" fill="#e6e9fb" font-size="13" font-weight="600">Match reply to lead</text><text x="663" y="151" fill="#9aa3c7" font-size="11">Code</text></g>
+<g><rect x="856" y="20" width="190" height="54" rx="9" fill="#141a2e" stroke="#a78bfa" stroke-width="2"/><rect x="856" y="20" width="6" height="54" rx="3" fill="#a78bfa"/><text x="872" y="43" fill="#e6e9fb" font-size="13" font-weight="600">Keep sheet columns</text><text x="872" y="61" fill="#9aa3c7" font-size="11">Code</text></g>
+<g><rect x="1065" y="20" width="190" height="54" rx="9" fill="#141a2e" stroke="#60a5fa" stroke-width="2"/><rect x="1065" y="20" width="6" height="54" rx="3" fill="#60a5fa"/><text x="1081" y="43" fill="#e6e9fb" font-size="13" font-weight="600">Mark replied</text><text x="1081" y="61" fill="#9aa3c7" font-size="11">Google Sheets</text></g>
+<g><rect x="856" y="200" width="190" height="54" rx="9" fill="#141a2e" stroke="#9aa3c7" stroke-width="2"/><rect x="856" y="200" width="6" height="54" rx="3" fill="#9aa3c7"/><text x="872" y="223" fill="#e6e9fb" font-size="13" font-weight="600">Slack reply alert</text><text x="872" y="241" fill="#9aa3c7" font-size="11">HTTP Request</text></g>
+</svg>
