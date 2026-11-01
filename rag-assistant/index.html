@@ -11,14 +11,15 @@
 </head>
 <body>
 <header class="top"><div class="wrap">
-  <a class="brand" href="../"><span class="mark">O</span>Oarsman AI</a>
-  <nav class="links"><a href="../demos/">All demos</a><a class="on" href="./">RAG assistant</a><a href="case-study.html">Case study</a></nav>
+  <a class="brand" href="../"><span class="mark" aria-hidden="true">O</span>Oarsman AI</a>
+  <nav class="links" aria-label="Main"><a href="../">Demos</a><a class="on" href="./">RAG assistant</a><a href="case-study.html">Case study</a><a href="https://oarsmanai.com/">oarsmanai.com</a></nav>
 </div></header>
 <main class="wrap">
   <div class="hero">
     <p><span class="demo-badge">Demo build, no client</span></p>
     <h1>Handbook assistant: <span class="grad">cites its sources, admits what it doesn't know</span></h1>
     <p class="lead">Ask anything about the employee handbook of <strong>Brightmoor Labs</strong>, a made-up company. Every answer links to the passage it came from. If the handbook doesn't cover your question, the assistant says so instead of guessing. The eval panel below shows how often it gets things right.</p>
+    <p class="small">Product page: <a href="https://oarsmanai.com/agents/website-support-agent/">Website Support Agent at oarsmanai.com</a></p>
   </div>
   <section>
     <div class="honest">
@@ -28,7 +29,7 @@
         <li><span class="tag real">Real</span>Answers are <strong>extractive</strong>. The assistant picks the best one or two sentences and copies them word for word, so it can't make up a policy. No language model writes anything, and no API key or server is involved.</li>
         <li><span class="tag real">Real</span>The "I don't know" gate refuses when the best passage scores too low, or when it covers less than half of the question's key words. Open "How this was found" under any answer to see the scores.</li>
         <li><span class="tag sample">Sample</span>Brightmoor Labs and its handbook are fictional. The eval questions were written alongside the handbook, so they aren't an independent benchmark.</li>
-        <li><span class="tag sim">AI use</span>AI tools helped write the code, the fictional handbook and the copy. A client build would usually add embeddings and an LLM (OpenAI, Claude or a local model) to write fluent answers, while keeping the same citations and refusal checks.</li>
+        <li><span class="tag sim">AI use</span>AI tools helped write the code, the fictional handbook and the copy. A production version would usually add embeddings and an LLM (OpenAI, Claude or a local model) to write fluent answers, while keeping the same citations and refusal checks.</li>
       </ul>
     </div>
   </section>
@@ -50,7 +51,7 @@
     </div>
   </section>
 </main>
-<footer><div class="wrap">Oarsman AI. Demo build, no client. AI tools helped write this page, the code and the fictional handbook. Everything runs in your browser: no tracking, no cookies, no API keys, nothing sent anywhere. <a href="../demos/">All demos</a> · <a href="case-study.html">Case study</a></div></footer>
+<footer><div class="wrap">Oarsman AI. Demo build, no client. AI tools helped write this page, the code and the fictional handbook. Everything runs in your browser: no tracking, no cookies, no API keys, nothing sent anywhere. <a href="../">Demos</a> · <a href="https://oarsmanai.com/">oarsmanai.com</a> · <a href="https://oarsmanai.com/privacy/">Privacy</a> · <a href="https://oarsmanai.com/terms/">Terms</a> · <a href="case-study.html">Case study</a></div></footer>
 <script src="handbook.js"></script>
 <script src="rag.js"></script>
 <script src="evalset.js"></script>

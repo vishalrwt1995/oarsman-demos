@@ -11,19 +11,19 @@
 </head>
 <body>
 <header class="top"><div class="wrap">
-  <a class="brand" href="../"><span class="mark">O</span>Oarsman AI</a>
-  <nav class="links"><a href="../demos/">All demos</a><a href="./">SaaS MVP</a><a class="on" href="case-study.html">Case study</a></nav>
+  <a class="brand" href="../"><span class="mark" aria-hidden="true">O</span>Oarsman AI</a>
+  <nav class="links" aria-label="Main"><a href="../">Demos</a><a href="./">SaaS MVP</a><a class="on" href="case-study.html">Case study</a><a href="https://oarsmanai.com/">oarsmanai.com</a></nav>
 </div></header>
 <main class="wrap cs">
   <div class="hero" style="padding-bottom:6px">
     <p><span class="demo-badge">Demo build, no client</span></p>
     <h1>Plotboard: a working SaaS MVP with roles, CRUD and test-mode billing</h1>
     <div class="meta"><span>Type: web app / SaaS MVP</span><span>Built: Oct 2026</span><span>Status: public demo, fictional data</span></div>
-    <p><a class="btn primary" href="./">Open the live demo</a></p>
+    <p><a class="btn primary" href="./">Open the live demo</a><a class="btn" href="https://oarsmanai.com/agents/saas-mvp-starter/">SaaS MVP Starter at oarsmanai.com</a></p>
   </div>
   <section>
     <h2>Problem</h2>
-    <p>Founders who hire for an MVP usually get screenshots or a clickable mockup first, and only find out late whether the hard parts work: who's allowed to do what, what happens with bad input, and whether data survives a reload. We wanted a demo that shows those parts working, and that a client can poke at before any call.</p>
+    <p>Many MVP starters show screenshots or a clickable mockup, and you only find out late whether the hard parts work: who's allowed to do what, what happens with bad input, and whether data survives a reload. We wanted a demo that shows those parts working, so anyone can poke at them before using the starter.</p>
   </section>
   <section>
     <h2>Build</h2>
@@ -50,13 +50,13 @@
   <section>
     <h2>Stack</h2>
     <p>Plain HTML, CSS and JavaScript, with no framework and no build step. A small core module (<code>core.js</code>, about 13 KB) holds the data model, validation and permissions, and it runs in both the browser and Node so the same tests cover both. Hosted on GitHub Pages. Tested with Node, Puppeteer (headless Chrome) and Lighthouse.</p>
-    <p class="muted small">For a client, the same structure moves to a real stack: React or Next.js on the front end, Supabase or Postgres with row-level security for data and roles, real auth (email, magic link or SSO), and Stripe Checkout with webhooks for billing.</p>
+    <p class="muted small">In production, the same structure maps onto a real stack: React or Next.js on the front end, Supabase or Postgres with row-level security for data and roles, real auth (email, magic link or SSO), and Stripe Checkout with webhooks for billing.</p>
   </section>
   <section>
     <h2>What's honest to say</h2>
     <div class="honest">This is a demo build with no client. Plotboard, its agency, clients and people are fictional. There's no server: sign-in is a mock with a shared demo password, and data stays in your own browser. AI tools helped write the code and copy, and the tests above are how we checked it. The source is readable in your browser's developer tools.</div>
   </section>
 </main>
-<footer><div class="wrap">Oarsman AI. Demo build, no client. AI tools helped write this page and the app. <a href="../demos/">All demos</a> · <a href="./">Live demo</a></div></footer>
+<footer><div class="wrap">Oarsman AI. Demo build, no client. AI tools helped write this page and the app. <a href="../">Demos</a> · <a href="https://oarsmanai.com/">oarsmanai.com</a> · <a href="https://oarsmanai.com/privacy/">Privacy</a> · <a href="https://oarsmanai.com/terms/">Terms</a> · <a href="./">Live demo</a></div></footer>
 </body>
 </html>

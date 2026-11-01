@@ -89,7 +89,7 @@
       return '<div class="card plan' + (k === cur ? ' cur' : '') + '"><h3>' + p.name + '</h3><div class="stat">$' + p.price + '<small>per month (test mode)</small></div><ul class="clean small"><li>' + p.seats + ' seats</li><li>' + p.projects + ' projects</li></ul>' +
         (k === cur ? '<span class="tag real">Current plan</span>' : canB ? '<button class="btn primary" data-plan="' + k + '">Switch to ' + p.name + '</button>' : '<span class="muted small">Admins manage billing</span>') + '</div>';
     }).join('');
-    return '<h2>Billing <span class="tag sim">test mode</span></h2><p class="muted small">No card form, no payment provider and no charges. Switching plans changes the limits straight away so you can see seat and project limits work. A client build would connect Stripe Checkout and webhooks here.</p><div class="plans">' + cards + '</div>';
+    return '<h2>Billing <span class="tag sim">test mode</span></h2><p class="muted small">No card form, no payment provider and no charges. Switching plans changes the limits straight away so you can see seat and project limits work. A production version would connect Stripe Checkout and webhooks here.</p><div class="plans">' + cards + '</div>';
   }
 
   function settings(user) {

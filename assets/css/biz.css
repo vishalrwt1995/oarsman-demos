@@ -41,3 +41,17 @@ header.top .wrap{gap:10px}
 .price{font-size:20px;font-weight:800;color:var(--teal);margin:0 0 6px}
 .plan-hl{border-color:var(--teal);box-shadow:0 0 0 1px rgba(52,245,197,.35)}
 .plan .stat{margin:6px 0 8px}
+/* Demos-only home (1 Nov 2026) */
+.dhero{padding:56px 0 30px;max-width:860px}
+.dhero h1{font-size:clamp(32px,5.4vw,54px);line-height:1.08;margin:0 0 16px;letter-spacing:-.5px}
+.dhero .lead{color:var(--muted);font-size:clamp(17px,2vw,20px);margin:0 0 20px;max-width:720px}
+.dgrid{list-style:none;margin:0;padding:0;display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))}
+.dcard{display:flex;flex-direction:column}
+.dcard img{display:block;width:100%;height:auto;aspect-ratio:4/3;border-radius:10px;border:1px solid var(--line);background:#0b1020;margin:0 0 14px}
+.dcard h3{font-size:19px}
+.dcard p{margin:0 0 10px}
+.dcard .dtest{color:var(--text)}
+.dcard .dlinks{margin-top:auto}
+.dcard .prod{display:block;margin-top:10px;padding-top:10px;border-top:1px solid var(--line);font-size:14px;font-weight:600;text-decoration:none}
+.dcard .prod:hover,.dcard .prod:focus-visible{text-decoration:underline}
+a:focus-visible,.btn:focus-visible{outline:2px solid var(--teal);outline-offset:2px}

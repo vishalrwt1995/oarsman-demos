@@ -1,5 +1,5 @@
 /*! © 2026 Oarsman AI. Demo use only. Not licensed for reuse, copying or redistribution.
- *  The full AI Front Desk kit: https://vishalrwt.gumroad.com/l/obpxq */
+ *  The full AI Front Desk kit: https://oarsmanai.com/agents/front-desk/ */
 // ===== AI Front Desk core library (pure functions; runs unchanged in n8n Code nodes and in Node tests) =====
 // Needs Luxon's DateTime as a global (n8n provides it in every Code node).
 const RC = (() => {

@@ -10,8 +10,8 @@
 </head>
 <body>
 <header class="top"><div class="wrap">
-  <a class="brand" href="../"><span class="mark">O</span>Oarsman AI</a>
-  <nav class="links"><a href="../front-desk/">AI front desk</a><a class="on" href="./">Automation &amp; scrapers</a></nav>
+  <a class="brand" href="../"><span class="mark" aria-hidden="true">O</span>Oarsman AI</a>
+  <nav class="links" aria-label="Main"><a class="on" href="./">Automation &amp; scrapers</a><a href="../">Demos</a><a href="https://oarsmanai.com/">oarsmanai.com</a></nav>
 </div></header>
 <main class="wrap">
   <div class="hero">
@@ -36,7 +36,7 @@
     <p class="muted">It reads job postings straight from company career sites on 10 job systems (Greenhouse, Lever, Ashby, Workday, Workable, Recruitee, Personio, Teamtailor, BambooHR, plus SmartRecruiters if you turn it on). Paste a careers page and it finds the job board behind it. In monitor mode, each run returns only new or changed jobs, lists closed ones, and can post them to your webhook. Price on the Store: <strong>$1.00 per 1,000 jobs</strong>, plus a small fixed fee each time a run starts.</p>
     <div class="grid g2">
       <div class="card"><div class="stat"><span id="ats-total">…</span><small>open jobs read from 8 company boards in one run of about 9 seconds (figma.com/careers was detected as Greenhouse). We saved 3 per board for this page.</small></div><div class="table-wrap" id="ats-runs" style="margin-top:10px"></div></div>
-      <div class="card"><h3>Tests on 31 Oct 2026</h3><ul class="clean small"><li><strong>33 / 33</strong> unit tests (Node 24 and 20)</li><li><strong>11 / 11</strong> live checks against real boards on 9 job systems, plus 404 handling and careers-page detection</li><li><strong>15 / 15</strong> end-to-end checks: capped runs, the next run returns the rest, a repeat run returns 0 new jobs, a changed job comes back as "updated", a closed job is reported, the webhook gets only new items</li><li>Extra probe: Workday boards at NVIDIA (2,000 jobs, the Workday cap) and Salesforce (1,554 jobs)</li></ul><a class="btn primary" href="https://apify.com/rationalistic_canoe/ats-jobs-feed">Open on Apify Store</a></div>
+      <div class="card"><h3>Tests on 31 Oct 2026</h3><ul class="clean small"><li><strong>33 / 33</strong> unit tests (Node 24 and 20)</li><li><strong>11 / 11</strong> live checks against real boards on 9 job systems, plus 404 handling and careers-page detection</li><li><strong>15 / 15</strong> end-to-end checks: capped runs, the next run returns the rest, a repeat run returns 0 new jobs, a changed job comes back as "updated", a closed job is reported, the webhook gets only new items</li><li>Extra probe: Workday boards at NVIDIA (2,000 jobs, the Workday cap) and Salesforce (1,554 jobs)</li></ul><a class="btn primary" href="https://oarsmanai.com/agents/job-feed-agent/">Job Feed Agent at oarsmanai.com</a> <a class="btn" href="https://apify.com/rationalistic_canoe/ats-jobs-feed">Open on Apify Store</a></div>
     </div>
     <h3 style="margin-top:16px">Sample output (24 jobs)</h3>
     <div class="tabs" id="ats-filter"></div>
@@ -54,14 +54,14 @@
     <h2>3. Lead List Enricher (website contacts) <span class="tag real">live on Apify</span></h2>
     <p class="muted">Give it a list of company websites. It reads a few pages per site (home, contact, about), respects robots.txt, and returns emails, phone numbers, social profiles, address and the contact page. You're charged only for companies where it finds contacts: $4.00 per 1,000 (here, gitlab.com had social profiles but no email). This run checked 5 sites.</p>
     <div class="table-wrap" id="contacts-table"></div>
-    <p><a class="btn primary" href="https://apify.com/rationalistic_canoe/website-contact-finder">Open on Apify Store</a></p>
+    <p><a class="btn primary" href="https://oarsmanai.com/agents/lead-enricher/">Lead Enricher at oarsmanai.com</a> <a class="btn" href="https://apify.com/rationalistic_canoe/website-contact-finder">Open on Apify Store</a></p>
   </section>
 
   <section>
     <h2>4. Google Sheets Sync <span class="tag real">live on Apify</span></h2>
     <p class="muted">Import a sheet into a dataset, or export, append or upsert a dataset into a sheet. Below: an import of 8 rows from Google's own public example spreadsheet (the names in it are Google's sample data), done in 0.3 seconds with 1 API request.</p>
     <div class="table-wrap" id="sheets-table"></div>
-    <p><a class="btn primary" href="https://apify.com/rationalistic_canoe/google-sheets-sync">Open on Apify Store</a></p>
+    <p><a class="btn primary" href="https://oarsmanai.com/agents/google-sheets-sync/">Google Sheets Sync at oarsmanai.com</a> <a class="btn" href="https://apify.com/rationalistic_canoe/google-sheets-sync">Open on Apify Store</a></p>
   </section>
 
   <section>
@@ -77,7 +77,7 @@
     </div>
     <div class="dscroll"><img class="diagram wide" id="wf-img" src="../assets/img/pack-01-score-and-route-website-leads.svg" alt="n8n workflow diagram" loading="lazy"></div><p class="muted small">Wide diagram: scroll sideways on a phone.</p>
     <p class="muted small" id="wf-cap">Score, dedupe and route website leads with OpenAI, Google Sheets, Slack and email. 27 nodes. Test report: 48/48 checks (the AI model is mocked in tests).</p>
-    <p><a class="btn primary" href="https://vishalrwt.gumroad.com/l/free-n8n-workflows">Get the free pack on Gumroad</a> <a class="btn" href="https://vishalrwt.gumroad.com/l/n8n-lead-autopilot">Lead Autopilot (full 7-workflow version)</a></p>
+    <p><a class="btn primary" href="https://oarsmanai.com/agents/free-n8n-workflow-pack/">Get the free pack at oarsmanai.com</a> <a class="btn" href="https://oarsmanai.com/agents/lead-autopilot/">Lead Autopilot (full 7-workflow version)</a></p>
   </section>
 
   <section>
@@ -89,10 +89,10 @@
   </section>
 
   <section>
-    <div class="card small">Raw data for the tables above (<span id="raw-n">…</span> rows, JSON): <a href="../assets/data/actor-samples.json">actor-samples.json</a>. All actors: <a href="https://apify.com/rationalistic_canoe">apify.com/rationalistic_canoe</a>. All products: <a href="https://vishalrwt.gumroad.com/">vishalrwt.gumroad.com</a>.</div>
+    <div class="card small">Raw data for the tables above (<span id="raw-n">…</span> rows, JSON): <a href="../assets/data/actor-samples.json">actor-samples.json</a>. All actors: <a href="https://apify.com/rationalistic_canoe">apify.com/rationalistic_canoe</a>. All products: <a href="https://oarsmanai.com/agents/">oarsmanai.com/agents</a>.</div>
   </section>
 </main>
-<footer><div class="wrap">Oarsman AI. AI tools helped write this page and the code behind these tools. Job postings belong to the companies that published them and are linked to their source. No tracking, no cookies. <a href="../demos/">All demos</a></div></footer>
+<footer><div class="wrap">Oarsman AI. AI tools helped write this page and the code behind these tools. Job postings belong to the companies that published them and are linked to their source. No tracking, no cookies. <a href="../">Demos</a> · <a href="https://oarsmanai.com/">oarsmanai.com</a> · <a href="https://oarsmanai.com/privacy/">Privacy</a> · <a href="https://oarsmanai.com/terms/">Terms</a></div></footer>
 <script src="../assets/js/automation.js"></script>
 </body>
 </html>
